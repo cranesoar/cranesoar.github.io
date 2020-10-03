@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Wei&#39;s Space">
 <meta property="og:description" content="趁着这几天刚搞完博客部署，域名配置这些事，赶紧记录一下主要操作，避免以后长时间不用忘记了">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-10-03T13:57:02.850Z">
+<meta property="og:updated_time" content="2020-10-03T14:07:00.451Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客的git终端使用">
 <meta name="twitter:description" content="趁着这几天刚搞完博客部署，域名配置这些事，赶紧记录一下主要操作，避免以后长时间不用忘记了">
@@ -301,7 +301,7 @@ Error: Cannot find module &#39;./db.json&#39;
     at Function.Module._resolveFilename (internal/modules/cjs/loader.js:668:15)
     at Function.Module._load (internal/modules/cjs/loader.js:591:27)
     at Module.require (internal/modules/cjs/loader.js:723:19)
-    at require (internal/modules/cjs/helpers.js:14:16)</code></pre><p>在<a href="https://github.com/hexojs/hexo/issues/2689" target="_blank" rel="noopener">这里</a>找到了好用的解决方法，是因为hexo版本不匹配的问题需要进行清除并更新。<br>尝试使用<code>npm upgrade</code>或升级依赖项<code>npm upgrade hexo-server</code>在执行此操作之前<code>exo clean</code>，<code>rm -rf node_modules</code>。好下一个</p>
+    at require (internal/modules/cjs/helpers.js:14:16)</code></pre><p>在<a href="https://github.com/hexojs/hexo/issues/2689" target="_blank" rel="noopener">这里</a>找到了好用的解决方法，是因为hexo版本不匹配的问题需要进行清除并更新。<br>尝试使用<code>npm upgrade</code>或升级依赖项<code>npm upgrade hexo-server</code>在执行此操作之前<code>hexo clean</code>，<code>rm -rf node_modules</code>。好下一个</p>
 <ul>
 <li><code>hexo d</code>时出现如下错误</li>
 </ul>
@@ -317,7 +317,7 @@ TypeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integer.
 </ul>
 <pre><code>fatal: &#39;my_homepages&#39; does not appear to be a git repository
 fatal: Could not read from remote repository.</code></pre><p>这是因为在本git环境下没有添加该远程仓库，使用该命令</p>
-<pre><code>git remote add my_homepages git@github.com:cranesoar/my_homepages.git</code></pre><p>要是不小心添加错了地址，使用<code>git renote remove [name]</code>移除，并重新添加。</p>
+<pre><code>git remote add my_homepages git@github.com:cranesoar/my_homepages.git</code></pre><p>要是不小心添加错了地址，使用<code>git remote remove [name]</code>移除，并重新添加。</p>
 <hr>
 <p>这样一顿操作后，之前的博客仓库在新电脑下运行起来了，但是发现有些页面的排版和符号的显示有突变和bug，这个不要慌，将根目录的博客备份版本直接回退到之前电脑的最新版本，<code>hexo clean</code>后重新编译部署就都回来了！在新电脑上开干！</p>
 <h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3>
