@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>回顾大创项目的故事</title>
+      <link href="2020/06/15/%E5%9B%9E%E9%A1%BE%E5%A4%A7%E5%88%9B%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%95%85%E4%BA%8B/"/>
+      <url>2020/06/15/%E5%9B%9E%E9%A1%BE%E5%A4%A7%E5%88%9B%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%95%85%E4%BA%8B/</url>
+      
+        <content type="html"><![CDATA[<p>这个项目是我大学本科时期，利用做RM比赛的几个月业余时间和伙伴一起完成的，结题竟然搞到了院里第一的国优。因为只是凭着兴趣所做的小玩意，有相当的学术水分，所以只当作一段有趣的经历来回忆，便放在故事目录下了。 尤其感谢 <a href="https://www.diywalkers.com/">DIY Walkers</a>(需使用非港台的VPN访问)的Wade Vagle先生的友好支持，这个项目中的基本设计比例来自他们的工作。<a id="more"></a></p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在开始前我先花点时间感慨下，从去年7月份在光机所建立这个站的将近一年中的数番变故，让我终于得以在今天才偷闲再次打开这里。这一年中有我自身的小气候，也有外围环境的大气候，让我体验深刻。姑且当做是：</p><blockquote><p>行弗乱其所为，所以动心忍性，曾益其所不能吧！</p></blockquote><p>不然还能咋滴。期间感谢我的家人朋友们的帮助和鼓励。特别是我的杜老桌，她的善良和坚强总能让人很踏实，也乐于看到她这些年的变化，哈哈大家都在成长。</p><h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>好了进入正题，从我拉着博雯组队搞大创开始，我们的进展就莫名的顺利。没什么大的梦想，就想搞点好玩的东西，借着大创项目的经费。开始的第一天晚上，我就躺在床上一路谷歌百度到四点，顺利确定了我们的选题和开发方案，期间和博雯交换意见，便一拍即合——搞个自主的连杆四足机器人，初期设计参照<a href="https://www.diywalkers.com/">DIY Walkers</a>的上方案。也是因为一直搞RM的轮式车车有些乏味，汧总吐槽这机器人过个门槛都要人抱。至于后面的项目应用方向的申报却是花了些时间来回横跳，有钱就行了哈哈。一点题外话，可能那年正值四足机器人的风口，我这个选题恰巧押中了次年的RoboCon的比赛主题，后来的在丛老师的机器人设计课上省了不少事，但是我们的连杆四足实际上还是很落伍的，主要是我考虑到业余时间有限，重心还是在RM那边。下面这个图就是我们最终的完成照了，后来又加了个相机上去。<img src="/images/2020-06-16-01.jpg" alt="项目图片"></p><h1 id="方案设计验证"><a href="#方案设计验证" class="headerlink" title="方案设计验证"></a>方案设计验证</h1><p>我们组员的成分还是很有意思的，因为一些妙不可言的缘分。那时我们组员包含了大一，大二，大三；机械，机器人，生医。算是跨学科跨年级团队的典范哈哈，在后面的各种工作中大家各显神通，实在是幸运。前期我计划先将DIY Walkers上的乐高示意方案进行复现，看看将它铝型材重制版时需要做哪些变化。白嫖了强哥在科学馆三楼公司的那堆乐高，加上高中乐高冠军嘉祺的帮助，我们很快便复现了出来。<img src="/images/2020-06-16-02.jpg" alt="2020-06-16-02"></p><hr><p>比照DIY Walkers上的Demo，我们的第一步还算顺利。这个连杆四足的基本腿部比例确定了下来。而对于具体的Klann连杆机理我们并没有深究，后面也就只发了一篇路径规划相关的论文了事。可能是因为我们找了计算机的指导老师吧。<br><img src="/images/2020-06-16-03.gif" alt="2020-06-16-03">     <img src="/images/2020-06-16-04.gif" alt="2020-06-16-04"></p><hr><p>今天先到这里，后面继续更新，这还是挺长。最近才和Wade先生发完邮件，向他们正式致谢，他也对我们的工作表示认可，并将我们的演示视频分享在<a href="https://www.youtube.com/channel/UCpucV3Q9cE_PsVFcyyPDuKw">他们YouTube的频道</a>，如下所示，我也将其同步上传至我空空的B站。至于邀请我写的专业性的项目分享，我自觉还是水平未到。</p><div style="height: 0;padding-bottom:65%;position: relative;"><br><iframe width="1024" height="768" src="https://www.youtube.com/embed/_OvBInJIV7g" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen style="position: absolute;height: 100%;width: 100%;"> </iframe><br></div> <div style="height: 0;padding-bottom:65%;position: relative;"><br><iframe width="1024" height="768" src="//player.bilibili.com/player.html?aid=668573291&bvid=BV1ea4y1Y7jb&cid=202533840&page=1"  scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen style="position: absolute;height: 100%;width: 100%;"> </iframe><br></div> ]]></content>
+      
+      
+      <categories>
+          
+          <category> 故事 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 机械 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>RoboMaster生涯</title>
+      <link href="2019/08/22/RoboMaster%E7%94%9F%E6%B6%AF/"/>
+      <url>2019/08/22/RoboMaster%E7%94%9F%E6%B6%AF/</url>
+      
+        <content type="html"><![CDATA[<p>最后参与半年的RM2019在此作结 <a id="more"></a><br>憋不住感慨<br>见证了三代队友前赴后继冲击金手终于成功<br>从大成楼一隅到科学馆的三片区<br>从新人散养到精培<br>从目测玄学搞机到数据规范搞机<br>从以前的能者多劳到现在人人都可以是能者<br>在老师和一代代队长带领下，TDT越来越成熟<br>比赛的时候也越来越从容，不再狼狈匆忙<br>在这里老师，前辈，队友们教给我很多<br>希望今后咱们逐渐形成隔壁那样的体系，在RM的赛场上  敢于直面淋漓的鲜奶，保持稳定的成绩。<br>借超哥常引的一句话<br>一个人可以走的很快，但一群人可以走的很远<br>弼辅之心，拳拳可鉴，今当远离，祝更好<br>我庆幸我曾经加入过这么一支团队</p><hr><div style="height: 0;padding-bottom:65%;position: relative;"><br><iframe width="1024" height="768" src="//player.bilibili.com/player.html?aid=64004751&cid=111127206&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen style="position: absolute;height: 100%;width: 100%;"> </iframe><br></div> <hr><p><img src="/images/2019-08-22-06.jpg" alt="2019赛季大金手" title="2019赛季大金手"></p><p><img src="/images/2019-08-22-07.jpg" alt="2017赛季合影" title="2017赛季合影"></p><p><img src="/images/2019-08-22-08.jpg" alt="2018赛季合影" title="2018赛季合影"></p><p><img src="/images/2019-08-22-09.jpg" alt="2019赛季合影" title="2019赛季合影"></p><hr><p><img src="/images/2019-08-22-10.jpg" alt="" title="一些帅照"></p><p><img src="/images/2019-08-22-11.jpg" alt="" title="一些帅照"></p><p><img src="/images/2019-08-22-12.jpg" alt="" title="一些帅照"></p><p><img src="/images/2019-08-22-13.jpg" alt="" title="一些帅照"></p><p><img src="/images/2019-08-22-14.jpg" alt="" title="一些帅照"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 故事 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> RM </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Yolo-V3训练及测试</title>
+      <link href="2019/07/22/Yolo-V3%E8%AE%AD%E7%BB%83%E5%8F%8A%E6%B5%8B%E8%AF%95/"/>
+      <url>2019/07/22/Yolo-V3%E8%AE%AD%E7%BB%83%E5%8F%8A%E6%B5%8B%E8%AF%95/</url>
+      
+        <content type="html"><![CDATA[<p>在和队友共同标注了10000张图片后，拷贝进实验室的TitanXP主机，正式开始训练测试进程,Yolo是实验室师姐推荐，实时性较好的神经网络框架。</p><a id="more"></a><p><img src="/images/2019-07-22-02.jpg" alt="标注图片" title="标注图片"><br>主要参考了以下两篇帖子</p><p><a href="https://blog.csdn.net/qq_34806812/article/details/81673798">每一步超详细！制作自己的voc数据集并通过yolov3训练</a></p><p><a href="https://www.cnblogs.com/xieqi/p/9818056.html">YOLO-V3实战（darknet）</a></p><h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1.准备工作"></a>1.准备工作</h2><p><a href="https://pjreddie.com/darknet/install/">darknet</a>主机已经安装好了，我们直接开始训练。不过darknet文件夹内已经有师姐训练过的文件，我们需要建立新的文件系列，避开师姐使用过的文件名，避免冲突。</p><h3 id="1-1建立文件树"><a href="#1-1建立文件树" class="headerlink" title="1.1建立文件树"></a>1.1建立文件树</h3><p>在<code>darknet/VOCdevkit</code>下新建文件夹<code>VOC2019</code>，<br><code>VOC2019</code>下有三个文件夹<code>JPEGImages</code>，<code>Annotations</code>，<code>ImageSets</code>。<code>ImageSets</code>下包含两个文件夹<code>Main</code>，<code>Layout</code>。</p><h3 id="1-2拷贝训练集"><a href="#1-2拷贝训练集" class="headerlink" title="1.2拷贝训练集"></a>1.2拷贝训练集</h3><p><code>JPEGImages</code>下放所有的训练图片，最终darknet会按照设定比例随机分配训练集和测试集。<br><code>Annotations</code>下放所有的xml标记文件</p><h3 id="1-3生成txt标签"><a href="#1-3生成txt标签" class="headerlink" title="1.3生成txt标签"></a>1.3生成txt标签</h3><p>将下面代码存为python文件，在<code>VOC2019</code>下运行。在<code>ImageSets</code>-<code>Main</code>路径下生成三个txt文件（<code>test.txt</code>,<code>train.txt</code>,<code>val.txt</code>），里面是不带后缀的图片名。</p><pre><code>import osimport randomtrainval_percent = 0.1train_percent = 0.9xmlfilepath = &#39;Annotations&#39;txtsavepath = &#39;ImageSets\Main&#39;total_xml = os.listdir(xmlfilepath)num = len(total_xml)list = range(num)tv = int(num * trainval_percent)tr = int(tv * train_percent)trainval = random.sample(list, tv)train = random.sample(trainval, tr)ftrainval = open(&#39;ImageSets/Main/trainval.txt&#39;, &#39;w&#39;)ftest = open(&#39;ImageSets/Main/test.txt&#39;, &#39;w&#39;)ftrain = open(&#39;ImageSets/Main/train.txt&#39;, &#39;w&#39;)fval = open(&#39;ImageSets/Main/val.txt&#39;, &#39;w&#39;)for i in list:    name = total_xml[i][:-4] + &#39;\n&#39;    if i in trainval:        ftrainval.write(name)        if i in train:            ftest.write(name)        else:            fval.write(name)    else:        ftrain.write(name)ftrainval.close()ftrain.close()fval.close()ftest.close()</code></pre><hr><p>复制<code>voc_label.py</code>文件为<code>voc_label_car.py</code>，修改如下几处，设置文件路径和分类标签。然后在<code>VOCdevkit</code>路径下运行<code>voc_label_car.py</code>，发现生成了5个list文件（<code>2019_train.txt</code>, <code>2019_val.txt</code>, <code>2019_test.txt</code>, <code>train_car.txt</code>, <code>train_car.all.txt</code>）。</p><pre><code>sets=[(&#39;2019&#39;, &#39;train&#39;), (&#39;2019&#39;, &#39;val&#39;), (&#39;2019&#39;, &#39;test&#39;)]classes = [&quot;car&quot;]</code></pre><hr><pre><code>os.system(&quot;cat 2019_train.txt 2019_val.txt &gt; train_car.txt&quot;)os.system(&quot;cat 2019_train.txt 2019_val.txt 2019_test.txt &gt; train_car.all.txt&quot;)</code></pre><h3 id="1-4修改配置文件"><a href="#1-4修改配置文件" class="headerlink" title="1.4修改配置文件"></a>1.4修改配置文件</h3><h4 id="1-4-1新建cfg-voc-car-data"><a href="#1-4-1新建cfg-voc-car-data" class="headerlink" title="1.4.1新建cfg/voc_car.data"></a>1.4.1新建<code>cfg/voc_car.data</code></h4><p>复制<code>cfg/voc.data</code>进行修改新建。如下</p><pre><code>classes= 1train  = /home/dl/darknet/scripts/train_car.txtvalid  = /home/dl/darknet/scripts/2019_test.txtnames = data/voc_car.namesbackup = backup/car</code></pre><h4 id="1-4-2新建data-voc-car-names"><a href="#1-4-2新建data-voc-car-names" class="headerlink" title="1.4.2新建data/voc_car.names"></a>1.4.2新建<code>data/voc_car.names</code></h4><p>内容为标签类型，因为我们训练只有一类car，故只写该类型，如果多个类型则逐行单写。</p><pre><code>car</code></pre><h4 id="1-4-3新建cfg-yolov3-voc-car-cfg"><a href="#1-4-3新建cfg-yolov3-voc-car-cfg" class="headerlink" title="1.4.3新建cfg/yolov3-voc-car.cfg"></a>1.4.3新建<code>cfg/yolov3-voc-car.cfg</code></h4><p>复制<code>cfg/yolov3-voc.cfg</code>进行修改新建。<br>1.注释testing，打开train。<br>2.根据显卡的显存大小，设置batch和subdivisions。<br>3.修改三个yolo层的class和filters（<code>filters=3*(class+5)</code>。例如我这里class=1，filters=18。</p><h3 id="1-5下载预训练权重文件"><a href="#1-5下载预训练权重文件" class="headerlink" title="1.5下载预训练权重文件"></a>1.5下载预训练权重文件</h3><p><code>wget https://pjreddie.com/media/files/darknet53.conv.74</code></p><h2 id="2-开始训练并生成训练日志"><a href="#2-开始训练并生成训练日志" class="headerlink" title="2.开始训练并生成训练日志"></a>2.开始训练并生成训练日志</h2><p><code>./darknet detector train cfg/voc_car.data cfg/yolov3-voc-car.cfg darknet53.conv.74 | tee result/log_car/training_car.log</code><br>当loss下降至0.0X，可停止训练。<br>不过在本次训练中，总训练时长6天，loss在0.3到0.4震荡了4天无下降迹象后停止训练。</p><h2 id="3-绘制训练曲线"><a href="#3-绘制训练曲线" class="headerlink" title="3.绘制训练曲线"></a>3.绘制训练曲线</h2><p>进入<code>result/log_car</code>路径</p><h3 id="3-1解析log文件"><a href="#3-1解析log文件" class="headerlink" title="3.1解析log文件"></a>3.1解析log文件</h3><p>在该路径下运行如下python代码，命名为<code>extract_log.py</code>。</p><pre><code># coding=utf-8# 该文件用来提取训练log，去除不可解析的log后使log文件格式化，生成新的log文件供可视化工具绘图import inspectimport osimport randomimport sysdef extract_log(log_file, new_log_file, key_word):    with open(log_file, &#39;r&#39;) as f:        with open(new_log_file, &#39;w&#39;) as train_log:            # f = open(log_file)            # train_log = open(new_log_file, &#39;w&#39;)            for line in f:                # 去除多gpu的同步log                if &#39;Syncing&#39; in line:                    continue                # 去除除零错误的log                if &#39;nan&#39; in line:                    continue                if key_word in line:                    train_log.write(line)    f.close()    train_log.close()extract_log(&#39;training_car_sub.log&#39;, &#39;training_log_sub_loss.txt&#39;, &#39;images&#39;)extract_log(&#39;training_car_sub.log&#39;, &#39;training_log_sub_iou.txt&#39;, &#39;IOU&#39;)</code></pre><p>生成两个txt文件，是解析出的loss和IOU数值。</p><h3 id="3-2绘制loss曲线"><a href="#3-2绘制loss曲线" class="headerlink" title="3.2绘制loss曲线"></a>3.2绘制loss曲线</h3><p>修改对应数值，运行如下python代码，命名为<code>training_loss_sub_visualization.py</code>。</p><pre><code>import pandas as pdimport numpy as npimport matplotlib.pyplot as plt# %matplotlib inlinelines = 93841  # 改为自己生成的train_log_loss.txt中的行数result = pd.read_csv(&#39;training_log_sub_loss.txt&#39;, skiprows=[x for x in range(lines) if ((x % 10 != 9) | (x &lt; 1000))],                     error_bad_lines=False, names=[&#39;loss&#39;, &#39;avg&#39;, &#39;rate&#39;, &#39;seconds&#39;, &#39;images&#39;])result.head()result[&#39;loss&#39;] = result[&#39;loss&#39;].str.split(&#39; &#39;).str.get(1)result[&#39;avg&#39;] = result[&#39;avg&#39;].str.split(&#39; &#39;).str.get(1)result[&#39;rate&#39;] = result[&#39;rate&#39;].str.split(&#39; &#39;).str.get(1)result[&#39;seconds&#39;] = result[&#39;seconds&#39;].str.split(&#39; &#39;).str.get(1)result[&#39;images&#39;] = result[&#39;images&#39;].str.split(&#39; &#39;).str.get(1)result.head()result.tail()# print(result.head())# print(result.tail())# print(result.dtypes)print(result[&#39;loss&#39;])print(result[&#39;avg&#39;])print(result[&#39;rate&#39;])print(result[&#39;seconds&#39;])print(result[&#39;images&#39;])result[&#39;loss&#39;] = pd.to_numeric(result[&#39;loss&#39;])result[&#39;avg&#39;] = pd.to_numeric(result[&#39;avg&#39;])result[&#39;rate&#39;] = pd.to_numeric(result[&#39;rate&#39;])result[&#39;seconds&#39;] = pd.to_numeric(result[&#39;seconds&#39;])result[&#39;images&#39;] = pd.to_numeric(result[&#39;images&#39;])result.dtypesfig = plt.figure()ax = fig.add_subplot(1, 1, 1)ax.plot(result[&#39;avg&#39;].values, label=&#39;avg_loss&#39;)# ax.plot(result[&#39;loss&#39;].values,label=&#39;loss&#39;)ax.legend(loc=&#39;best&#39;)  # 图列自适应位置ax.set_title(&#39;The loss curves&#39;)ax.set_xlabel(&#39;batches&#39;)fig.savefig(&#39;avg_loss&#39;)# fig.savefig(&#39;loss&#39;)</code></pre><p><img src="/images/2019-08-22-01.png" alt="loss曲线" title="loss曲线"></p><h3 id="3-3绘制Aug-IOU曲线"><a href="#3-3绘制Aug-IOU曲线" class="headerlink" title="3.3绘制Aug IOU曲线"></a>3.3绘制Aug IOU曲线</h3><p>修改对应数值，运行如下python代码，命名为<code>train_iou_sub_visualization.py</code>。</p><pre><code>import pandas as pdimport numpy as npimport matplotlib.pyplot as plt# %matplotlib inlinelines = 3000000  # 根据train_log_iou.txt的行数修改result = pd.read_csv(&#39;training_log_sub_iou.txt&#39;, skiprows=[x for x in range(lines) if (x % 10 == 0 or x % 10 == 9)],                     error_bad_lines=False, names=[&#39;Region Avg IOU&#39;, &#39;Class&#39;, &#39;Obj&#39;, &#39;No Obj&#39;, &#39;Avg Recall&#39;, &#39;count&#39;])result.head()result[&#39;Region Avg IOU&#39;] = result[&#39;Region Avg IOU&#39;].str.split(&#39;: &#39;).str.get(1)result[&#39;Class&#39;] = result[&#39;Class&#39;].str.split(&#39;: &#39;).str.get(1)result[&#39;Obj&#39;] = result[&#39;Obj&#39;].str.split(&#39;: &#39;).str.get(1)result[&#39;No Obj&#39;] = result[&#39;No Obj&#39;].str.split(&#39;: &#39;).str.get(1)result[&#39;Avg Recall&#39;] = result[&#39;Avg Recall&#39;].str.split(&#39;: &#39;).str.get(1)result[&#39;count&#39;] = result[&#39;count&#39;].str.split(&#39;: &#39;).str.get(1)result.head()result.tail()# print(result.head())# print(result.tail())# print(result.dtypes)print(result[&#39;Region Avg IOU&#39;])result[&#39;Region Avg IOU&#39;] = pd.to_numeric(result[&#39;Region Avg IOU&#39;])result[&#39;Class&#39;] = pd.to_numeric(result[&#39;Class&#39;])result[&#39;Obj&#39;] = pd.to_numeric(result[&#39;Obj&#39;])result[&#39;No Obj&#39;] = pd.to_numeric(result[&#39;No Obj&#39;])result[&#39;Avg Recall&#39;] = pd.to_numeric(result[&#39;Avg Recall&#39;])result[&#39;count&#39;] = pd.to_numeric(result[&#39;count&#39;])result.dtypesfig = plt.figure()ax = fig.add_subplot(1, 1, 1)ax.plot(result[&#39;Region Avg IOU&#39;].values, label=&#39;Region Avg IOU&#39;)# ax.plot(result[&#39;Class&#39;].values,label=&#39;Class&#39;)# ax.plot(result[&#39;Obj&#39;].values,label=&#39;Obj&#39;)# ax.plot(result[&#39;No Obj&#39;].values,label=&#39;No Obj&#39;)# ax.plot(result[&#39;Avg Recall&#39;].values,label=&#39;Avg Recall&#39;)# ax.plot(result[&#39;count&#39;].values,label=&#39;count&#39;)ax.legend(loc=&#39;best&#39;)# ax.set_title(&#39;The Region Avg IOU curves&#39;)ax.set_title(&#39;The Region Avg IOU curves&#39;)ax.set_xlabel(&#39;batches&#39;)# fig.savefig(&#39;Avg IOU&#39;)fig.savefig(&#39;Region Avg IOU&#39;)</code></pre><p><img src="/images/2019-08-22-02.png" alt="Avg IOU曲线" title="Avg IOU曲线"></p><hr><p>在约4000批后，loss开始在0.3~0.4之间震荡不再下降，而IOU（交并比）后来也一直稳定在0.95以上。分析变化曲线，修改cfg文件中的学习率变化策略获得更优的训练效果。</p><h2 id="4-测试训练的权重文件"><a href="#4-测试训练的权重文件" class="headerlink" title="4.测试训练的权重文件"></a>4.测试训练的权重文件</h2><p><img src="/images/2019-08-22-03.png" alt="未在数据集的图片测试" title="未在数据集的图片测试"><br>我们使用前10000张图片进行训练，随机抽取后7000张图片进行测试。对于右上角停车场和上方十字路口处的车辆，在训练集中未对其进行标注，测试时也没有被网络框选。</p><hr><p><img src="/images/2019-08-22-04.png" alt="原始网络图片" title="原始网络图片"></p><hr><p><img src="/images/2019-08-22-05.jpg" alt="网络图片测试" title="网络图片测试"></p><hr><p>对于在网上特殊挑选，环境光相似，车辆密度相似的车流图片，训练出的网络也展现出来良好的识别能力，甚至对于训练集中未曾标注的公交车也成功识别，体现了Yolo一定程度的泛化能力。</p><h2 id="细节拓展"><a href="#细节拓展" class="headerlink" title="细节拓展"></a>细节拓展</h2><p><a href="https://www.cnblogs.com/DicksonJYL/p/9467511.html">MLE&amp;MAP(最大似然估计和最大后验概率估计)</a></p><p><a href="https://blog.csdn.net/guleileo/article/details/80581858">从YOLOv1到YOLOv3，目标检测的进化之路</a></p><h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 项目 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 机器学习 </tag>
+            
+            <tag> Yolo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>使用labelImg高效标注数据集</title>
+      <link href="2019/07/22/%E7%94%A8labelImg%E9%AB%98%E6%95%88%E6%A0%87%E6%B3%A8%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
+      <url>2019/07/22/%E7%94%A8labelImg%E9%AB%98%E6%95%88%E6%A0%87%E6%B3%A8%E6%95%B0%E6%8D%AE%E9%9B%86/</url>
+      
+        <content type="html"><![CDATA[<p>作为小白，视觉实习的第一个任务就是标注工，和我的小白队友共同承担10000张图片中车辆的标注工作。实习时间有限，标注枯燥无味，便和队友搞了个批处理脚本，大幅提高了标注效率。</p><a id="more"></a><h2 id="修改文件名"><a href="#修改文件名" class="headerlink" title="修改文件名"></a>修改文件名</h2><p>由于我是前5000张图片，顺序标号从<code>1.png</code>开始，在labelImg中，按文件夹打开后，文件排序呈现左对齐的情况，即按第一个数字大小排序：</p><ul><li>1.png</li><li>10.png</li><li>100.png</li></ul><p>这里应该将文件名修改为<code>0001.png</code>这种格式。修改的matlab代码如下，但是奇怪的是在师姐电脑运行修改顺序正确，我的电脑看matlab里的文件读取结构体顺序依旧是左对齐。无奈在师姐那里修改完再拷贝回来。</p><pre><code>%%%图片保存路径为：%E:\image\car%E:\image\person%car和person是保存车和行人的文件夹%这些文件夹还可以有多个，%放在image文件夹里就行%该代码的作用是将图片名字改成000123.jpg这种形式%%clc;clear;maindir=&#39;D:\1魏鹤翔\长春光机所\标注工\rename\test&#39;;name_long=5; %图片名字的长度，如000123.jpg为6,最多9位,可修改num_begin=1; %图像命名开始的数字如000123.jpg开始的话就是123subdir = dir(maindir);n=1;for i = 1:length(subdir)  %if ~strcmp(subdir(i).name ,&#39;.&#39;) &amp;&amp; ~strcmp(subdir(i).name,&#39;..&#39;)  if ~strcmp(subdir(i).name ,&#39;.&#39;) || ~strcmp(subdir(i).name,&#39;..&#39;)     subsubdir = dir(strcat(maindir,subdir(i).name));    for j=1:length(subsubdir)         if ~strcmp(subsubdir(j).name ,&#39;.&#39;) &amp;&amp; ~strcmp(subsubdir(j).name,&#39;..&#39;)            img=imread([maindir,subdir(i).name,&#39;\&#39;,subsubdir(j).name]);            imshow(img);            str=num2str(num_begin,&#39;%09d&#39;);            newname=strcat(str,&#39;.png&#39;);            newname=newname(end-(name_long+3):end);            system([&#39;rename &#39; [maindir,subdir(i).name,&#39;\&#39;,subsubdir(j).name] &#39; &#39; newname]);            num_begin=num_begin+1;            fprintf(&#39;当前处理文件夹%s&#39;,subdir(i).name);            fprintf(&#39;已经处理%d张图片\n&#39;,n);            n=n+1;           pause(0.1);%可以将暂停去掉         end    end  endend</code></pre><h2 id="复制并顺序命名标注文件"><a href="#复制并顺序命名标注文件" class="headerlink" title="复制并顺序命名标注文件"></a>复制并顺序命名标注文件</h2><p> 由于我们的图片是视频文件顺序截取，所以两张图片之间的标注信息具有高度相似性，这也是为什么上面一定要按顺序排序文件。这样一来，我们只需对上一张的标注信息做少量修改即可。于是我们便一起写了这个windows的批处理文件，如下</p><pre><code>@echo offcd. &gt;name.txt    //清空命名txt文件set /a start=4990  //设置复制目标文件set /a long=15    //设置复制文件个数set /a end=start+longfor /l %%i in (%start%,1,%end%) do (echo %%i.xml &gt;&gt; name.txt)  //将文件名按顺序写入命名txt文件set name=%start%.xmlfor /f %%i in (test.txt) do (  echo F|(copy %name% %%i))  //复制目标标注文件并按照txt文件内容命名新的标注文件</code></pre><p> 这样我们标好一张图片，邻近的10张左右便可以仅修改即可。批处理bat文件和txt文件以及xml文件放在同一个文件夹下，运行即可。</p><h2 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h2><p> 我们这样仅对文件名进行修改，导致标注文件中的图片和路径信息与图片不对应，仍然是源文件信息。</p><p><img src="/images/2019-07-22-01.jpg" alt="标注文件内容" title="标注文件内容"></p><p>所幸标注软件和训练框架都是读取文件名来对应图片，所以对于内部信息的错误并无影响。但是看到有人和我们碰到相同的问题并用python脚本顺利解决，这里记录一下，以后可能用得着。</p><p><a href="https://blog.csdn.net/qq_41983165/article/details/87919633">批量重命名文件名</a></p><p><a href="https://blog.csdn.net/qq_41983165/article/details/87977712">修改xml文件的path和filename</a></p><h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 项目 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 机器学习 </tag>
+            
+            <tag> 批处理 </tag>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo博客的git终端使用</title>
+      <link href="2019/07/20/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84git%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8/"/>
+      <url>2019/07/20/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84git%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<p>趁着这几天刚搞完博客部署，域名配置这些事，赶紧记录一下主要操作，避免以后长时间不用忘记了</p><a id="more"></a><h3 id="新建博客"><a href="#新建博客" class="headerlink" title="新建博客"></a>新建博客</h3><p>在根目录打开 git bash 运行下面语句</p><pre><code>hexo s -d</code></pre><p>是<strong>hexo sever</strong>的简写，在本地运行admin页面，在浏览器中打开如下网址</p><pre><code>http://localhost:4000/admin</code></pre><p>进入管理页面，进行博客内容管理，新建修改等操作</p><h3 id="删除废弃标签，分类"><a href="#删除废弃标签，分类" class="headerlink" title="删除废弃标签，分类"></a>删除废弃标签，分类</h3><p>对于空标签，空分类，在管理页面检查无误后，在根目录运行</p><pre><code>hexo clean</code></pre><p>将历史静态页面删除，再运行</p><pre><code>hexo g -d</code></pre><p>重新生成静态页面，并更新部署到远程仓库</p><h3 id="博客部署"><a href="#博客部署" class="headerlink" title="博客部署"></a>博客部署</h3><p>将修改完的配置，博客保存后首先</p><pre><code>hexo g</code></pre><p>生成新的静态页面，然后通过下面语句在本地部署</p><pre><code>hexo s</code></pre><p>浏览器中打开<code>http://localhost:4000</code>即可立即查看，若没有问题更新远程仓库则</p><pre><code>hexo d</code></pre><p>等待大约一分钟左右即可在对应域名看到远程更新。</p><hr><p>生成静态页面和远程部署操作也可以融合为一句<code>hexo d -g</code>或<code>hexo g -d</code>，更加方便快捷。</p><ul><li>s ==&gt; sever</li><li>g ==&gt; generate</li><li>d ==&gt; deploy</li></ul><h3 id="博客备份"><a href="#博客备份" class="headerlink" title="博客备份"></a>博客备份</h3><p>方便以后电脑环境重新配置，安装了hexo-git-backup,</p><pre><code>hexo backup 或 hexo b</code></pre><p>就可以推送到根目录配置文件<code>_config.yml</code>指定的备份仓库的指定分支，可以设置想要备份的主题文件夹，这样以后重新安装hexo后，再克隆下来即可。</p><h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 项目 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Git </tag>
+            
+            <tag> Blog </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Markdown标记语言</title>
+      <link href="2019/07/20/Markdown%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80/"/>
+      <url>2019/07/20/Markdown%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80/</url>
+      
+        <content type="html"><![CDATA[<p><strong>Markdown是一种轻量级的「标记语言」</strong><br>我们经常可以见到git仓库初始化时的readme.md文件，即是用它写的。Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面，Markdown文件的后缀名便是“.md”。我本站的博客也是用该语言记录。</p><a id="more"></a><p>本篇内容主要参考自<a href="https://www.mdeditor.com/" title="Markdown">Markdown</a>。</p><h2 id="功能演示"><a href="#功能演示" class="headerlink" title="功能演示"></a>功能演示</h2><h3 id="1-字符效果和横线"><a href="#1-字符效果和横线" class="headerlink" title="1. 字符效果和横线"></a>1. 字符效果和横线</h3><pre><code># 标题H1## 标题H2</code></pre><h1 id="标题H1"><a href="#标题H1" class="headerlink" title="标题H1"></a>标题H1</h1><h2 id="标题H2"><a href="#标题H2" class="headerlink" title="标题H2"></a>标题H2</h2><pre><code>--- (横线)&lt;s&gt;删除线（开启识别HTML标签时）&lt;/s&gt; (删除线)*斜体字*      _斜体字_**粗体**  __粗体__***粗斜体*** ___粗斜体___上标：X&lt;sub&gt;2&lt;/sub&gt;，下标：O&lt;sup&gt;2&lt;/sup&gt;</code></pre><hr><p><s>删除线（开启识别HTML标签时）</s></p><p><em>斜体字</em>      <em>斜体字</em></p><p><strong>粗体</strong>  <strong>粗体</strong></p><p><strong><em>粗斜体</em></strong> <strong><em>粗斜体</em></strong></p><p>上标：X<sub>2</sub>，下标：O<sup>2</sup></p><h3 id="2-引用-Blockquotes"><a href="#2-引用-Blockquotes" class="headerlink" title="2. 引用 Blockquotes"></a>2. 引用 Blockquotes</h3><pre><code>&gt; 引用文本 Blockquotes引用的行内混合 Blockquotes&gt; 引用：如果想要插入空白换行`即&lt;br /&gt;标签`，在插入处先键入两个以上的空格然后回车即可，[普通链接](https://www.mdeditor.com/)。</code></pre><blockquote><p>引用文本 Blockquotes</p></blockquote><p>引用的行内混合 Blockquotes</p><blockquote><p>引用：如果想要插入空白换行<code>即&lt;br /&gt;标签</code>，在插入处先键入两个以上的空格然后回车即可，<a href="https://www.mdeditor.com">普通链接</a>。</p></blockquote><h3 id="3-锚点与链接-Links"><a href="#3-锚点与链接-Links" class="headerlink" title="3. 锚点与链接 Links"></a>3. 锚点与链接 Links</h3><pre><code>[普通链接](https://www.mdeditor.com/)[普通链接带标题](https://www.mdeditor.com/ &quot;普通链接带标题&quot;)直接链接：&lt;https://www.mdeditor.com&gt;</code></pre><p><a href="https://www.mdeditor.com/">普通链接</a></p><p><a href="https://www.mdeditor.com/" title="普通链接带标题">普通链接带标题</a></p><p>直接链接：<a href="https://www.mdeditor.com">https://www.mdeditor.com</a></p><h3 id="4-多语言代码高亮-Codes"><a href="#4-多语言代码高亮-Codes" class="headerlink" title="4. 多语言代码高亮 Codes"></a>4. 多语言代码高亮 Codes</h3><h4 id="4-1-行内代码-Inline-code"><a href="#4-1-行内代码-Inline-code" class="headerlink" title="4.1 行内代码 Inline code"></a>4.1 行内代码 Inline code</h4><pre><code>执行命令：`npm install marked`</code></pre><p>执行命令：<code>npm install marked</code></p><h4 id="4-2-缩进风格"><a href="#4-2-缩进风格" class="headerlink" title="4.2 缩进风格"></a>4.2 缩进风格</h4><p>即缩进四个空格，也做为实现类似 <code>&lt;pre&gt;</code> 预格式化文本 ( Preformatted Text ) 的功能。</p><pre><code>    &lt;?php        echo &quot;Hello world!&quot;;    ?&gt;</code></pre><pre><code>&lt;?php    echo &quot;Hello world!&quot;;?&gt;</code></pre><h3 id="5-图片加链接-Images"><a href="#5-图片加链接-Images" class="headerlink" title="5. 图片加链接 Images"></a>5. 图片加链接 Images</h3><pre><code>[![](/images/avatar1.jpg)](http://www.cranefly88.cn &quot;CraneFly88&quot;)</code></pre><h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h5><ul><li>在Windows系统中，正斜杠/表示除法，用来进行整除运算；<strong>反斜杠\用来表示目录</strong>。</li><li>在Unix系统中，<strong>正斜杠/表示目录</strong>；\表示跳脱字符将特殊字符变成一般字符（如enter,$,空格等）</li></ul><p>由于我在Windows下写博客，所以一开始我用反斜杠\引用图片，出现预览可以看到图片，但是网页不可见的现象。考虑到由于hexo运行在unix环境下，故应该修改为用正斜杠/引用图片才好使。<br><a href="http://www.cranefly88.cn" title="CraneFly88"><img src="/images/avatar1.jpg" alt=""></a></p><h3 id="6-绘制表格-Tables"><a href="#6-绘制表格-Tables" class="headerlink" title="6. 绘制表格 Tables"></a>6. 绘制表格 Tables</h3><pre><code>| Function name | Description                    || ------------- | ------------------------------ || `help()`      | Display the help window.       || `destroy()`   | **Destroy your computer!**     |</code></pre><table><thead><tr><th>Function name</th><th>Description</th></tr></thead><tbody><tr><td><code>help()</code></td><td>Display the help window.</td></tr><tr><td><code>destroy()</code></td><td><strong>Destroy your computer!</strong></td></tr></tbody></table><pre><code>| 项目        | 价格   |  数量  || --------   | -----:  | :----:  || 计算机      | $1600   |   5     || 手机        |   $12   |   12   || 管线        |    $1    |  234  |</code></pre><table><thead><tr><th>项目</th><th align="right">价格</th><th align="center">数量</th></tr></thead><tbody><tr><td>计算机</td><td align="right">$1600</td><td align="center">5</td></tr><tr><td>手机</td><td align="right">$12</td><td align="center">12</td></tr><tr><td>管线</td><td align="right">$1</td><td align="center">234 #</td></tr></tbody></table><h3 id="7-科学公式-TeX-KaTeX"><a href="#7-科学公式-TeX-KaTeX" class="headerlink" title="7. 科学公式 TeX(KaTeX)"></a>7. 科学公式 TeX(KaTeX)</h3><p><a href="https://www.jianshu.com/p/a0aa94ef8ab2" title="科学公式">Markdown科学公式详解</a></p><h3 id="8-绘制流程图，序列图"><a href="#8-绘制流程图，序列图" class="headerlink" title="8. 绘制流程图，序列图"></a>8. 绘制流程图，序列图</h3><p>在此不必要展开</p><h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 项目 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Blog </tag>
+            
+            <tag> 语言 </tag>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Why Blog</title>
+      <link href="2019/07/18/indexs/"/>
+      <url>2019/07/18/indexs/</url>
+      
+        <content type="html"><![CDATA[<p><strong>鹤翔的个人站</strong> 是魏鹤翔的个人站。始建于大三暑期，长春光机所实习期间，终于决定要记录过去才能清晰未来。</p><a id="more"></a><p>目前看，这个站还是建晚了，大学前三年的项目丰富期已经过去，暂时不会有太多需要记录的东西了。但是光机所头几天遭遇让我下定建这个站的决心。以前耗费4，5天已经完成过的事，再次碰到却宛如新生，尴尬至极。若是久之以往，可以预见到的是，将来必然还会频繁如此上演。<br>三年来，看过了前辈们潮水般的博客，帖子，书页，鱼龙混杂。解决自己问题后便扔回大海，分散在各处。回想来，记住的屈指可数，呵凡人一个。我的时间不多了，不能再这样重复耗费，不能再这样无所追忆，希望这里会是今后前进的牢固后盾。</p><blockquote><p>Talk is cheap,Show me the code.</p></blockquote><h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客部署在 <a href="https://pages.github.com/">GitHub Pages</a></p><p>主要功能：</p><ul><li>搜索支持文章标题、标签(#标签)、作者(@作者)</li><li>Pad/手机等移动端适配</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 故事 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Blog </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
