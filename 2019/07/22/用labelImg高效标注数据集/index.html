@@ -11,20 +11,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="作为小白，视觉实习的第一个任务就是标注工，和我的小白队友共同承担10000张图片中车辆的标注工作。实习时间有限，标注枯燥无味，便和队友搞了个批处理脚本，大幅提高了标注效率。">
+<meta name="keywords" content="批处理,机器学习,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用labelImg高效标注数据集">
-<meta property="og:url" content="https://cranesoar.cn/2019/07/22/%E7%94%A8labelImg%E9%AB%98%E6%95%88%E6%A0%87%E6%B3%A8%E6%95%B0%E6%8D%AE%E9%9B%86/index.html">
+<meta property="og:url" content="https://cranesoar.cn/2019/07/22/用labelImg高效标注数据集/index.html">
 <meta property="og:site_name" content="Wei&#39;s Space">
 <meta property="og:description" content="作为小白，视觉实习的第一个任务就是标注工，和我的小白队友共同承担10000张图片中车辆的标注工作。实习时间有限，标注枯燥无味，便和队友搞了个批处理脚本，大幅提高了标注效率。">
-<meta property="og:locale">
+<meta property="og:locale" content="default">
 <meta property="og:image" content="https://cranesoar.cn/images/2019-07-22-01.jpg">
-<meta property="article:published_time" content="2019-07-22T01:17:00.000Z">
-<meta property="article:modified_time" content="2020-10-03T11:37:08.725Z">
-<meta property="article:author" content="Wei&#39;s Space">
-<meta property="article:tag" content="机器学习">
-<meta property="article:tag" content="批处理">
-<meta property="article:tag" content="python">
+<meta property="og:updated_time" content="2020-10-03T11:37:08.725Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用labelImg高效标注数据集">
+<meta name="twitter:description" content="作为小白，视觉实习的第一个任务就是标注工，和我的小白队友共同承担10000张图片中车辆的标注工作。实习时间有限，标注枯燥无味，便和队友搞了个批处理脚本，大幅提高了标注效率。">
 <meta name="twitter:image" content="https://cranesoar.cn/images/2019-07-22-01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Wei&#39;s Space" type="application/atom+xml">
@@ -69,8 +67,10 @@
 			<img src="/img/head.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-			<h1 class="header-author"><a href="/"></a></h1>
+			<h1 class="header-author"><a href="/">Wei&#39;s Space</a></h1>
 		</hgroup>
+		
+		<p class="header-subtitle">The very essence of romance is uncertainty</p>
 		
 
 		<nav class="header-menu">
@@ -78,13 +78,13 @@
 			
 				<li><a href="https://cranesoar.cn/" >External</a></li>
 			
-				<li><a target="_blank" rel="noopener" href="https://cranefly88.gitee.io/" >境内服</a></li>
+				<li><a href="https://cranefly88.gitee.io/" >境内服</a></li>
 			
-				<li><a href="/categories/%E9%A1%B9%E7%9B%AE/" >Stray</a></li>
+				<li><a href="/categories/项目/" >Stray</a></li>
 			
-				<li><a href="/categories/%E5%AD%A6%E6%9C%AF/" >Study</a></li>
+				<li><a href="/categories/学术/" >Study</a></li>
 			
-				<li><a href="/categories/%E6%95%85%E4%BA%8B/" >Story</a></li>
+				<li><a href="/categories/故事/" >Story</a></li>
 			
 			</ul>
 		</nav>
@@ -139,8 +139,10 @@
 				</a>
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author"></h1>
+			  <h1 class="header-author js-header-author">Wei&#39;s Space</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>The very essence of romance is uncertainty<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -178,13 +180,13 @@
 				
 					<li style="width: 35%"><a href="https://cranesoar.cn/">External</a></li>
 		        
-					<li style="width: 35%"><a target="_blank" rel="noopener" href="https://cranefly88.gitee.io/">境内服</a></li>
+					<li style="width: 35%"><a href="https://cranefly88.gitee.io/">境内服</a></li>
 		        
-					<li style="width: 35%"><a href="/categories/%E9%A1%B9%E7%9B%AE/">Stray</a></li>
+					<li style="width: 35%"><a href="/categories/项目/">Stray</a></li>
 		        
-					<li style="width: 35%"><a href="/categories/%E5%AD%A6%E6%9C%AF/">Study</a></li>
+					<li style="width: 35%"><a href="/categories/学术/">Study</a></li>
 		        
-					<li style="width: 35%"><a href="/categories/%E6%95%85%E4%BA%8B/">Story</a></li>
+					<li style="width: 35%"><a href="/categories/故事/">Story</a></li>
 		        
 				</ul>
 			</nav>
@@ -219,7 +221,7 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2019/07/22/%E7%94%A8labelImg%E9%AB%98%E6%95%88%E6%A0%87%E6%B3%A8%E6%95%B0%E6%8D%AE%E9%9B%86/" class="archive-article-date">
+<a href="/2019/07/22/用labelImg高效标注数据集/" class="archive-article-date">
         <time datetime="2019-07-22T01:17:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-22</time>
 </a>
 
@@ -317,8 +319,8 @@ for /f %%i in (test.txt) do (
 <h2 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h2><p> 我们这样仅对文件名进行修改，导致标注文件中的图片和路径信息与图片不对应，仍然是源文件信息。</p>
 <p><img src="/images/2019-07-22-01.jpg" alt="标注文件内容" title="标注文件内容"></p>
 <p>所幸标注软件和训练框架都是读取文件名来对应图片，所以对于内部信息的错误并无影响。但是看到有人和我们碰到相同的问题并用python脚本顺利解决，这里记录一下，以后可能用得着。</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41983165/article/details/87919633">批量重命名文件名</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41983165/article/details/87977712">修改xml文件的path和filename</a></p>
+<p><a href="https://blog.csdn.net/qq_41983165/article/details/87919633" target="_blank" rel="noopener">批量重命名文件名</a></p>
+<p><a href="https://blog.csdn.net/qq_41983165/article/details/87977712" target="_blank" rel="noopener">修改xml文件的path和filename</a></p>
 <h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2>
     
 
@@ -367,11 +369,11 @@ for /f %%i in (test.txt) do (
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">批处理</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">批处理</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -442,7 +444,7 @@ for /f %%i in (test.txt) do (
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://cranesoar.cn/2019/07/22/%E7%94%A8labelImg%E9%AB%98%E6%95%88%E6%A0%87%E6%B3%A8%E6%95%B0%E6%8D%AE%E9%9B%86/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://cranesoar.cn/2019/07/22/用labelImg高效标注数据集/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -457,7 +459,7 @@ for /f %%i in (test.txt) do (
 
 <nav id="article-nav">
   
-    <a href="/2019/07/22/Yolo-V3%E8%AE%AD%E7%BB%83%E5%8F%8A%E6%B5%8B%E8%AF%95/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/07/22/Yolo-V3训练及测试/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -467,7 +469,7 @@ for /f %%i in (test.txt) do (
     </a>
   
   
-    <a href="/2019/07/20/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84git%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/07/20/Hexo博客的git终端使用/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Hexo博客的git终端使用</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -646,23 +648,15 @@ for /f %%i in (test.txt) do (
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">RM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">语言</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">RM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Yolo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -674,7 +668,15 @@ for /f %%i in (test.txt) do (
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Yolo</a>
               </li>
             
             <div class="clearfix"></div>
