@@ -11,6 +11,20 @@
         <content type="html"><![CDATA[<p>IMU由于几乎不受外部环境影响能持续估计物体姿态的优异特性，被广泛应用于各种自动化设备。但是由于常见的6Dof传感器缺乏绝对参考，因此存在累计误差，对需要长时间持续运行的设备影响巨大。故对其误差的成分进行分析和标定有重要意义<a id="more"></a></p><h2 id="误差模型"><a href="#误差模型" class="headerlink" title="误差模型"></a>误差模型</h2><h2 id="标定方法"><a href="#标定方法" class="headerlink" title="标定方法"></a>标定方法</h2><h2 id="噪声分析——阿伦方差"><a href="#噪声分析——阿伦方差" class="headerlink" title="噪声分析——阿伦方差"></a>噪声分析——阿伦方差</h2>]]></content>
       
       
+      <categories>
+          
+          <category> 项目 </category>
+          
+          <category> 学术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SLAM </tag>
+            
+        </tags>
       
     </entry>
     
