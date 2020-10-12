@@ -4,11 +4,49 @@
   
     
     <entry>
+      <title>IMU的误差模型标定和噪声性能分析</title>
+      <link href="/2020/10/12/IMU%E7%9A%84%E8%AF%AF%E5%B7%AE%E6%A8%A1%E5%9E%8B%E6%A0%87%E5%AE%9A%E5%92%8C%E5%99%AA%E5%A3%B0%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90/"/>
+      <url>/2020/10/12/IMU%E7%9A%84%E8%AF%AF%E5%B7%AE%E6%A8%A1%E5%9E%8B%E6%A0%87%E5%AE%9A%E5%92%8C%E5%99%AA%E5%A3%B0%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90/</url>
+      
+        <content type="html"><![CDATA[<p>IMU由于几乎不受外部环境影响能持续估计物体姿态的优异特性，被广泛应用于各种自动化设备。但是由于常见的6Dof传感器缺乏绝对参考，因此存在累计误差，对需要长时间持续运行的设备影响巨大。故对其误差的成分进行分析和标定有重要意义<a id="more"></a></p><h2 id="误差模型"><a href="#误差模型" class="headerlink" title="误差模型"></a>误差模型</h2><h2 id="标定方法"><a href="#标定方法" class="headerlink" title="标定方法"></a>标定方法</h2><h2 id="噪声分析——阿伦方差"><a href="#噪声分析——阿伦方差" class="headerlink" title="噪声分析——阿伦方差"></a>噪声分析——阿伦方差</h2>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>用evo工具评估slam定位精度</title>
+      <link href="/2020/10/12/%E7%94%A8evo%E5%B7%A5%E5%85%B7%E8%AF%84%E4%BC%B0slam%E5%AE%9A%E4%BD%8D%E7%B2%BE%E5%BA%A6/"/>
+      <url>/2020/10/12/%E7%94%A8evo%E5%B7%A5%E5%85%B7%E8%AF%84%E4%BC%B0slam%E5%AE%9A%E4%BD%8D%E7%B2%BE%E5%BA%A6/</url>
+      
+        <content type="html"><![CDATA[<p>使用多个开源slam算法对同一个bag进行运算，获得其最终的里程计轨迹nav_msgs数据后，使用evo工具求取其分别与ground truth之间的误差。本篇由于跨度较大，采用倒叙来写，先忽视数据来源，从使用开始往回写。<a id="more"></a></p><h2 id="1-运行开源slam算法"><a href="#1-运行开源slam算法" class="headerlink" title="1.运行开源slam算法"></a>1.运行开源slam算法</h2><p>这里用的是lio-mapping和loam（无imu）</p><h2 id="2-获取里程计轨迹数据"><a href="#2-获取里程计轨迹数据" class="headerlink" title="2.获取里程计轨迹数据"></a>2.获取里程计轨迹数据</h2><p>由于两个算法的坐标系定义不同，导致轨迹互相垂直，使用额外ros节点进行重新修正发布，同时保证同步。也可以使用plotjuggler应急，选取不同坐标轴绘制二维轨迹。注意这里记得填充时间戳和frame_id,否则无法进行后续评估。</p><h2 id="3-用evo进行绘图和求误差"><a href="#3-用evo进行绘图和求误差" class="headerlink" title="3.用evo进行绘图和求误差"></a>3.用evo进行绘图和求误差</h2><p> <a href="https://github.com/MichaelGrupp/evo" target="_blank" rel="noopener">EVO工具仓库地址</a></p><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> 项目 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SLAM </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>回顾大创项目的故事</title>
       <link href="/2020/06/15/%E5%9B%9E%E9%A1%BE%E5%A4%A7%E5%88%9B%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%95%85%E4%BA%8B/"/>
       <url>/2020/06/15/%E5%9B%9E%E9%A1%BE%E5%A4%A7%E5%88%9B%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%95%85%E4%BA%8B/</url>
       
-        <content type="html"><![CDATA[<p>这个项目是我大学本科时期，利用做RM比赛的几个月业余时间和伙伴一起完成的，结题竟然搞到了院里第一的国优。因为只是凭着兴趣所做的小玩意，有相当的学术水分，所以只当作一段有趣的经历来回忆，便放在故事目录下了。 尤其感谢 <a href="https://www.diywalkers.com/" target="_blank" rel="noopener">DIY Walkers</a>(需使用非港台的VPN访问)的Wade Vagle先生的友好支持，这个项目中的基本设计比例来自他们的工作。<a id="more"></a></p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在开始前我先花点时间感慨下，从去年7月份在光机所建立这个站的将近一年中的数番变故，让我终于得以在今天才偷闲再次打开这里。这一年中有我自身的小气候，也有外围环境的大气候，让我体验深刻。姑且当做是：</p><blockquote><p>行弗乱其所为，所以动心忍性，曾益其所不能吧！</p></blockquote><p>不然还能咋滴。期间感谢我的家人朋友们的帮助和鼓励。特别是我的杜老桌，她的善良和坚强总能让人很踏实，也乐于看到她这些年的变化，哈哈大家都在成长。</p><h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>好了进入正题，从我拉着博雯组队搞大创开始，我们的进展就莫名的顺利。没什么大的梦想，就想搞点好玩的东西，借着大创项目的经费。开始的第一天晚上，我就躺在床上一路谷歌百度到四点，顺利确定了我们的选题和开发方案，期间和博雯交换意见，便一拍即合——搞个自主的连杆四足机器人，初期设计参照<a href="https://www.diywalkers.com/" target="_blank" rel="noopener">DIY Walkers</a>的上方案。也是因为一直搞RM的轮式车车有些乏味，汧总吐槽这机器人过个门槛都要人抱。至于后面的项目应用方向的申报却是花了些时间来回横跳，有钱就行了哈哈。一点题外话，可能那年正值四足机器人的风口，我这个选题恰巧押中了次年的RoboCon的比赛主题，后来的在丛老师的机器人设计课上省了不少事，但是我们的连杆四足实际上还是很落伍的，主要是我考虑到业余时间有限，重心还是在RM那边。下面这个图就是我们最终的完成照了，后来又加了个相机上去。<img src="/images/2020-06-16-01.jpg" alt="项目图片"></p><h1 id="方案设计验证"><a href="#方案设计验证" class="headerlink" title="方案设计验证"></a>方案设计验证</h1><p>我们组员的成分还是很有意思的，因为一些妙不可言的缘分。那时我们组员包含了大一，大二，大三；机械，机器人，生医。算是跨学科跨年级团队的典范哈哈，在后面的各种工作中大家各显神通，实在是幸运。前期我计划先将DIY Walkers上的乐高示意方案进行复现，看看将它铝型材重制版时需要做哪些变化。白嫖了强哥在科学馆三楼公司的那堆乐高，加上高中乐高冠军嘉祺的帮助，我们很快便复现了出来。<img src="/images/2020-06-16-02.jpg" alt="2020-06-16-02"></p><hr><p>比照DIY Walkers上的Demo，我们的第一步还算顺利。这个连杆四足的基本腿部比例确定了下来。而对于具体的Klann连杆机理我们并没有深究，后面也就只发了一篇路径规划相关的论文了事。可能是因为我们找了计算机的指导老师吧。<br><img src="/images/2020-06-16-03.gif" alt="2020-06-16-03">     <img src="/images/2020-06-16-04.gif" alt="2020-06-16-04"></p><hr><p>今天先到这里，后面继续更新，这还是挺长。最近才和Wade先生发完邮件，向他们正式致谢，他也对我们的工作表示认可，并将我们的演示视频分享在<a href="https://www.youtube.com/channel/UCpucV3Q9cE_PsVFcyyPDuKw" target="_blank" rel="noopener">他们YouTube的频道</a>，如下所示，我也将其同步上传至我空空的B站。至于邀请我写的专业性的项目分享，我自觉还是水平未到。</p><div style="height: 0;padding-bottom:65%;position: relative;"><br><iframe width="1024" height="768" src="https://www.youtube.com/embed/_OvBInJIV7g" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen style="position: absolute;height: 100%;width: 100%;"> </iframe><br></div> <div style="height: 0;padding-bottom:65%;position: relative;"><br><iframe width="1024" height="768" src="//player.bilibili.com/player.html?aid=668573291&bvid=BV1ea4y1Y7jb&cid=202533840&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen style="position: absolute;height: 100%;width: 100%;"> </iframe><br></div>]]></content>
+        <content type="html"><![CDATA[<p>这个项目是我大学本科时期，利用做RM比赛的几个月业余时间和伙伴一起完成的，结题竟然搞到了院里第一的国优。因为只是凭着兴趣所做的小玩意，有相当的学术水分，所以只当作一段有趣的经历来回忆，便放在故事目录下了。 尤其感谢 <a href="https://www.diywalkers.com/" target="_blank" rel="noopener">DIY Walkers</a>(需使用非港台的VPN访问)的Wade Vagle先生的友好支持，这个项目中的基本设计比例来自他们的工作。<a id="more"></a></p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在开始前我先花点时间感慨下，从去年7月份在光机所建立这个站的将近一年中的数番变故，让我终于得以在今天才偷闲再次打开这里。这一年中有我自身的小气候，也有外围环境的大气候，让我体验深刻。姑且当做是：</p><blockquote><p>行弗乱其所为，所以动心忍性，曾益其所不能吧！</p></blockquote><p>不然还能咋滴。期间感谢我的家人朋友们的帮助和鼓励。特别是我的杜老桌，她的善良和坚强总能让人很踏实，也乐于看到她这些年的变化，哈哈大家都在成长。</p><h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>好了进入正题，从我拉着博雯组队搞大创开始，我们的进展就莫名的顺利。没什么大的梦想，就想搞点好玩的东西，借着大创项目的经费。开始的第一天晚上，我就躺在床上一路谷歌百度到四点，顺利确定了我们的选题和开发方案，期间和博雯交换意见，便一拍即合——搞个自主的连杆四足机器人，初期设计参照<a href="https://www.diywalkers.com/" target="_blank" rel="noopener">DIY Walkers</a>的上方案。也是因为一直搞RM的轮式车车有些乏味，汧总吐槽这机器人过个门槛都要人抱。至于后面的项目应用方向的申报却是花了些时间来回横跳，有钱就行了哈哈。一点题外话，可能那年正值四足机器人的风口，我这个选题恰巧押中了次年的RoboCon的比赛主题，后来的在丛老师的机器人设计课上省了不少事，但是我们的连杆四足实际上还是很落伍的，主要是我考虑到业余时间有限，重心还是在RM那边。下面这个图就是我们最终的完成照了，后来又加了个相机上去。<img src="/images/2020-06-16-01.jpg" alt="项目图片"></p><h1 id="方案设计验证"><a href="#方案设计验证" class="headerlink" title="方案设计验证"></a>方案设计验证</h1><p>我们组员的成分还是很有意思的，因为一些妙不可言的缘分。那时我们组员包含了大一，大二，大三；机械，机器人，生医。算是跨学科跨年级团队的典范哈哈，在后面的各种工作中大家各显神通，实在是幸运。前期我计划先将DIY Walkers上的乐高示意方案进行复现，看看将它铝型材重制版时需要做哪些变化。白嫖了强哥在科学馆三楼公司的那堆乐高，加上高中乐高冠军嘉祺的帮助，我们很快便复现了出来。<img src="/images/2020-06-16-02.jpg" alt="2020-06-16-02"></p><hr><p>比照DIY Walkers上的Demo，我们的第一步还算顺利。这个连杆四足的基本腿部比例确定了下来。而对于具体的Klann连杆机理我们并没有深究，后面也就只发了一篇路径规划相关的论文了事。可能是因为我们找了计算机的指导老师吧。<br><img src="/images/2020-06-16-03.gif" alt="2020-06-16-03">     <img src="/images/2020-06-16-04.gif" alt="2020-06-16-04"></p><hr><p>今天先到这里，后面继续更新，这还是挺长。最近才和Wade先生发完邮件，向他们正式致谢，他也对我们的工作表示认可，并将我们的演示视频分享在<a href="https://www.youtube.com/channel/UCpucV3Q9cE_PsVFcyyPDuKw" target="_blank" rel="noopener">他们YouTube的频道</a>，如下所示，我也将其同步上传至我空空的B站。至于邀请我写的专业性的项目分享，我自觉还是水平未到。</p><div style="height: 0;padding-bottom:65%;position: relative;"><br><iframe width="1024" height="768" src="https://www.youtube.com/embed/_OvBInJIV7g" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen style="position: absolute;height: 100%;width: 100%;"> </iframe><br></div> <div style="height: 0;padding-bottom:65%;position: relative;"><br><iframe width="1024" height="768" src="//player.bilibili.com/player.html?aid=668573291&bvid=BV1ea4y1Y7jb&cid=202533840&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen style="position: absolute;height: 100%;width: 100%;"> </iframe><br></div> ]]></content>
       
       
       <categories>
