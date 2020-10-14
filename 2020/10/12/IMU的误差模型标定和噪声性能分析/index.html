@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Wei&#39;s Space">
 <meta property="og:description" content="IMU由于几乎不受外部环境影响能持续估计物体姿态的优异特性，被广泛应用于各种自动化设备。但是由于常见的6Dof传感器缺乏绝对参考，因此存在累计误差，对需要长时间持续运行的设备影响巨大。故对其误差的成分进行分析和标定有重要意义">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-10-12T14:25:25.081Z">
+<meta property="og:updated_time" content="2020-10-14T18:45:05.153Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IMU的误差模型标定和噪声性能分析">
 <meta name="twitter:description" content="IMU由于几乎不受外部环境影响能持续估计物体姿态的优异特性，被广泛应用于各种自动化设备。但是由于常见的6Dof传感器缺乏绝对参考，因此存在累计误差，对需要长时间持续运行的设备影响巨大。故对其误差的成分进行分析和标定有重要意义">
@@ -233,7 +233,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">118字</span>
+      <span class="post-count">358字</span>
     </span>
   </span>
 
@@ -253,8 +253,14 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>IMU由于几乎不受外部环境影响能持续估计物体姿态的优异特性，被广泛应用于各种自动化设备。但是由于常见的6Dof传感器缺乏绝对参考，因此存在累计误差，对需要长时间持续运行的设备影响巨大。故对其误差的成分进行分析和标定有重要意义<a id="more"></a></p>
-<h2 id="误差模型"><a href="#误差模型" class="headerlink" title="误差模型"></a>误差模型</h2><h2 id="标定方法"><a href="#标定方法" class="headerlink" title="标定方法"></a>标定方法</h2><h2 id="噪声分析——阿伦方差"><a href="#噪声分析——阿伦方差" class="headerlink" title="噪声分析——阿伦方差"></a>噪声分析——阿伦方差</h2>
+    <p>IMU由于几乎不受外部环境影响能持续估计物体姿态的优异特性，被广泛应用于各种自动化设备。但是由于常见的6Dof传感器缺乏绝对参考，因此存在累计误差，对需要长时间持续运行的设备影响巨大。故对其误差的成分进行分析和标定有重要意义<a id="more"></a><br><a href="https://uav.huanqiu.com/article/9CaKrnK8G4S" target="_blank" rel="noopener">MEMS惯性传感器参数解析</a></p>
+<h2 id="1误差模型"><a href="#1误差模型" class="headerlink" title="1误差模型"></a>1误差模型</h2><p>IMU的误差来主要来自于三部分，包括<strong>噪声(Bias and Noise)</strong>、<strong>尺度因子(Scale errors)</strong> 和<strong>轴偏差(Axis misalignments)</strong>。加速度计和陀螺仪的测量模型可以用下面来表达。<br>$$\begin{aligned} a^{B} &amp;=T^{a} K^{a}\left(a^{S}+b^{a}+v^{a}\right) \\ w^{B} &amp;=T^{g} K^{g}\left(w^{S}+b^{g}+v^{g}\right) \end{aligned}$$<br>其中上标𝑎 表示加速度计，𝑔 表示陀螺仪，𝐵表示正交的参考坐标系，𝑆 表示非正交的选准坐标系。𝑇表示轴偏差的变换矩阵，𝐾 表示尺度因子，𝑏,𝜈分别表示Bias（随机游走或者说是零偏）和白噪声。</p>
+<hr>
+<p>IMU的误差模型通常可以看到两种写法</p>
+<p>-</p>
+<h2 id="2标定方法"><a href="#2标定方法" class="headerlink" title="2标定方法"></a>2标定方法</h2><h3 id="2-1六面标定法"><a href="#2-1六面标定法" class="headerlink" title="2.1六面标定法"></a>2.1六面标定法</h3><h3 id="2-2运动标定法"><a href="#2-2运动标定法" class="headerlink" title="2.2运动标定法"></a>2.2运动标定法</h3><p><a href="https://ieeexplore.ieee.org/document/6907297" target="_blank" rel="noopener">A robust and easy to implement method for IMU calibration without external equipments</a><br><a href="https://github.com/Neil-Oyoung/imu_tk" target="_blank" rel="noopener">imu_tk</a>用于标定系统误差</p>
+<h2 id="3静态误差分析——阿伦方差"><a href="#3静态误差分析——阿伦方差" class="headerlink" title="3静态误差分析——阿伦方差"></a>3静态误差分析——阿伦方差</h2><p><a href="http://blog.sina.com.cn/s/blog_40edfdc90102y1ar.html" target="_blank" rel="noopener">严老师经验谈</a><br><a href="https://telesens.co/wp-content/uploads/2017/05/AllanVariance5087-1.pdf" target="_blank" rel="noopener">Allan Variance: Noise Analysis for Gyroscopes</a><br><a href="https://github.com/gaowenliang/imu_utils" target="_blank" rel="noopener">imu_utils</a>用于标定随机误差</p>
+
     
 
     
@@ -575,6 +581,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SLAM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
@@ -584,10 +594,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Blog</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SLAM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -611,15 +617,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">机械</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">批处理</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">机械</a>
               </li>
             
             <div class="clearfix"></div>
