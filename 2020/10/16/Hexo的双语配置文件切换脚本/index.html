@@ -238,7 +238,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">577字</span>
+      <span class="post-count">492字</span>
     </span>
   </span>
 
@@ -247,7 +247,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -260,98 +260,8 @@
     
     <p>由于github的服务器在境外，时常出现国内访问速度慢的问题，考虑实际需要，所以该站采用境内外的双语部署配置文件。每次分别部署时候要手动重命名四个文件，非常麻烦。所以写了这个脚本快速切换配置文件。话说将博客分成中英文两个git分支是最优雅彻底的方式，目前这个先用来应急。<a id="more"></a></p>
 <h3 id="switch-py"><a href="#switch-py" class="headerlink" title="switch.py"></a>switch.py</h3><p>该文件放在hexo博客文件夹的根目录，会自动检测当前配置语言，并切换为另一种配置。</p>
-<pre><code class="python">import os,sys
-#修改hexo配置文件
-path = r&#39;[博客路径]&#39;
-files = os.listdir(path)
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os,sys<br><span class="hljs-comment">#修改hexo配置文件</span><br>path = <span class="hljs-string">r'[博客路径]'</span><br>files = os.listdir(path)<br><br><span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> files:<br>    <span class="hljs-keyword">if</span> file == <span class="hljs-string">'_config_en.yml'</span>  :<br>        print(<span class="hljs-string">"Transfer hexo CN to EN"</span>)<br>        srcFile = <span class="hljs-string">'./_config.yml'</span><br>        dstFile = <span class="hljs-string">'./_config_cn.yml'</span><br>        <span class="hljs-keyword">try</span>:<br>            os.rename(srcFile,dstFile)<br>        <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>            print(e)<br>            print(<span class="hljs-string">'rename cnfile fail\r\n'</span>)<br>        <span class="hljs-keyword">else</span>:<br>            print(<span class="hljs-string">'rename cnfile success\r\n'</span>)<br>        srcFile = <span class="hljs-string">'./_config_en.yml'</span><br>        dstFile = <span class="hljs-string">'./_config.yml'</span><br>        <span class="hljs-keyword">try</span>:<br>            os.rename(srcFile,dstFile)<br>        <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>            print(e)<br>            print(<span class="hljs-string">'rename enfile fail\r\n'</span>)<br>        <span class="hljs-keyword">else</span>:<br>            print(<span class="hljs-string">'rename enfile success\r\n'</span>)<br>    <span class="hljs-keyword">elif</span> file == <span class="hljs-string">'_config_cn.yml'</span> :<br>        print(<span class="hljs-string">"Transfer hexo EN to CN"</span>)<br>        srcFile = <span class="hljs-string">'./_config.yml'</span><br>        dstFile = <span class="hljs-string">'./_config_en.yml'</span><br>        <span class="hljs-keyword">try</span>:<br>            os.rename(srcFile,dstFile)<br>        <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>            print(e)<br>            print(<span class="hljs-string">'rename enfile fail\r\n'</span>)<br>        <span class="hljs-keyword">else</span>:<br>            print(<span class="hljs-string">'rename enfile success\r\n'</span>)<br>        srcFile = <span class="hljs-string">'./_config_cn.yml'</span><br>        dstFile = <span class="hljs-string">'./_config.yml'</span><br>        <span class="hljs-keyword">try</span>:<br>            os.rename(srcFile,dstFile)<br>        <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>            print(e)<br>            print(<span class="hljs-string">'rename cnfile fail\r\n'</span>)<br>        <span class="hljs-keyword">else</span>:<br>            print(<span class="hljs-string">'rename cnfile success\r\n'</span>)<br><span class="hljs-comment">#修改主题配置文件</span><br>path = <span class="hljs-string">r'主题路径'</span><br>files = os.listdir(path)<br><br><span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> files:<br>    <span class="hljs-keyword">if</span> file == <span class="hljs-string">'_config_en.yml'</span>  :<br>        print(<span class="hljs-string">"Transfer themes CN to EN"</span>)<br>        srcFile = path+<span class="hljs-string">'/_config.yml'</span><br>        dstFile = path+<span class="hljs-string">'/_config_cn.yml'</span><br>        <span class="hljs-keyword">try</span>:<br>            os.rename(srcFile,dstFile)<br>        <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>            print(e)<br>            print(<span class="hljs-string">'rename cnfile fail\r\n'</span>)<br>        <span class="hljs-keyword">else</span>:<br>            print(<span class="hljs-string">'rename cnfile success\r\n'</span>)<br>        srcFile = path+<span class="hljs-string">'/_config_en.yml'</span><br>        dstFile = path+<span class="hljs-string">'/_config.yml'</span><br>        <span class="hljs-keyword">try</span>:<br>            os.rename(srcFile,dstFile)<br>        <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>            print(e)<br>            print(<span class="hljs-string">'rename enfile fail\r\n'</span>)<br>        <span class="hljs-keyword">else</span>:<br>            print(<span class="hljs-string">'rename enfile success\r\n'</span>)<br>    <span class="hljs-keyword">elif</span> file == <span class="hljs-string">'_config_cn.yml'</span> :<br>        print(<span class="hljs-string">"Transfer themes EN to CN"</span>)<br>        srcFile = path+<span class="hljs-string">'/_config.yml'</span><br>        dstFile = path+<span class="hljs-string">'/_config_en.yml'</span><br>        <span class="hljs-keyword">try</span>:<br>            os.rename(srcFile,dstFile)<br>        <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>            print(e)<br>            print(<span class="hljs-string">'rename enfile fail\r\n'</span>)<br>        <span class="hljs-keyword">else</span>:<br>            print(<span class="hljs-string">'rename enfile success\r\n'</span>)<br>        srcFile = path+<span class="hljs-string">'/_config_cn.yml'</span><br>        dstFile = path+<span class="hljs-string">'/_config.yml'</span><br>        <span class="hljs-keyword">try</span>:<br>            os.rename(srcFile,dstFile)<br>        <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>            print(e)<br>            print(<span class="hljs-string">'rename cnfile fail\r\n'</span>)<br>        <span class="hljs-keyword">else</span>:<br>            print(<span class="hljs-string">'rename cnfile success\r\n'</span>)<br></code></pre></td></tr></table></figure>
 
-for file in files:
-    if file == &#39;_config_en.yml&#39;  :
-        print(&quot;Transfer hexo CN to EN&quot;)
-        srcFile = &#39;./_config.yml&#39;
-        dstFile = &#39;./_config_cn.yml&#39;
-        try:
-            os.rename(srcFile,dstFile)
-        except Exception as e:
-            print(e)
-            print(&#39;rename cnfile fail\r\n&#39;)
-        else:
-            print(&#39;rename cnfile success\r\n&#39;)
-        srcFile = &#39;./_config_en.yml&#39;
-        dstFile = &#39;./_config.yml&#39;
-        try:
-            os.rename(srcFile,dstFile)
-        except Exception as e:
-            print(e)
-            print(&#39;rename enfile fail\r\n&#39;)
-        else:
-            print(&#39;rename enfile success\r\n&#39;)
-    elif file == &#39;_config_cn.yml&#39; :
-        print(&quot;Transfer hexo EN to CN&quot;)
-        srcFile = &#39;./_config.yml&#39;
-        dstFile = &#39;./_config_en.yml&#39;
-        try:
-            os.rename(srcFile,dstFile)
-        except Exception as e:
-            print(e)
-            print(&#39;rename enfile fail\r\n&#39;)
-        else:
-            print(&#39;rename enfile success\r\n&#39;)
-        srcFile = &#39;./_config_cn.yml&#39;
-        dstFile = &#39;./_config.yml&#39;
-        try:
-            os.rename(srcFile,dstFile)
-        except Exception as e:
-            print(e)
-            print(&#39;rename cnfile fail\r\n&#39;)
-        else:
-            print(&#39;rename cnfile success\r\n&#39;)
-#修改主题配置文件
-path = r&#39;主题路径&#39;
-files = os.listdir(path)
-
-for file in files:
-    if file == &#39;_config_en.yml&#39;  :
-        print(&quot;Transfer themes CN to EN&quot;)
-        srcFile = path+&#39;/_config.yml&#39;
-        dstFile = path+&#39;/_config_cn.yml&#39;
-        try:
-            os.rename(srcFile,dstFile)
-        except Exception as e:
-            print(e)
-            print(&#39;rename cnfile fail\r\n&#39;)
-        else:
-            print(&#39;rename cnfile success\r\n&#39;)
-        srcFile = path+&#39;/_config_en.yml&#39;
-        dstFile = path+&#39;/_config.yml&#39;
-        try:
-            os.rename(srcFile,dstFile)
-        except Exception as e:
-            print(e)
-            print(&#39;rename enfile fail\r\n&#39;)
-        else:
-            print(&#39;rename enfile success\r\n&#39;)
-    elif file == &#39;_config_cn.yml&#39; :
-        print(&quot;Transfer themes EN to CN&quot;)
-        srcFile = path+&#39;/_config.yml&#39;
-        dstFile = path+&#39;/_config_en.yml&#39;
-        try:
-            os.rename(srcFile,dstFile)
-        except Exception as e:
-            print(e)
-            print(&#39;rename enfile fail\r\n&#39;)
-        else:
-            print(&#39;rename enfile success\r\n&#39;)
-        srcFile = path+&#39;/_config_cn.yml&#39;
-        dstFile = path+&#39;/_config.yml&#39;
-        try:
-            os.rename(srcFile,dstFile)
-        except Exception as e:
-            print(e)
-            print(&#39;rename cnfile fail\r\n&#39;)
-        else:
-            print(&#39;rename cnfile success\r\n&#39;)
-</code></pre>
 <h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><p><img src="/images/2020-10-16-01.png" alt="运行结果" title="运行结果"></p>
 
     
@@ -707,6 +617,10 @@ for file in files:
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SLAM</a>
               </li>
              
@@ -740,10 +654,6 @@ for file in files:
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">批处理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
             
             <div class="clearfix"></div>

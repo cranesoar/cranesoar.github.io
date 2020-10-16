@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="作为小白，视觉实习的第一个任务就是标注工，和我的小白队友共同承担10000张图片中车辆的标注工作。实习时间有限，标注枯燥无味，便和队友搞了个批处理脚本，大幅提高了标注效率。">
-<meta name="keywords" content="机器学习,批处理,python">
+<meta name="keywords" content="python,机器学习,批处理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用labelImg高效标注数据集">
 <meta property="og:url" content="https://cranesoar.cn/2019/07/22/用labelImg高效标注数据集/index.html">
@@ -238,7 +238,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">914字</span>
+      <span class="post-count">910字</span>
     </span>
   </span>
 
@@ -267,58 +267,12 @@
 <li>100.png</li>
 </ul>
 <p>这里应该将文件名修改为<code>0001.png</code>这种格式。修改的matlab代码如下，但是奇怪的是在师姐电脑运行修改顺序正确，我的电脑看matlab里的文件读取结构体顺序依旧是左对齐。无奈在师姐那里修改完再拷贝回来。</p>
-<pre><code>%%
-%图片保存路径为：
-%E:\image\car
-%E:\image\person
-%car和person是保存车和行人的文件夹
-%这些文件夹还可以有多个，
-%放在image文件夹里就行
-%该代码的作用是将图片名字改成000123.jpg这种形式
-%%
-clc;
-clear;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs undefined">%%<br>%图片保存路径为：<br>%E:\image\car<br>%E:\image\person<br>%car和person是保存车和行人的文件夹<br>%这些文件夹还可以有多个，<br>%放在image文件夹里就行<br>%该代码的作用是将图片名字改成000123.jpg这种形式<br>%%<br>clc;<br>clear;<br> <br>maindir=&apos;D:\1魏鹤翔\长春光机所\标注工\rename\test&apos;;<br>name_long=5; %图片名字的长度，如000123.jpg为6,最多9位,可修改<br>num_begin=1; %图像命名开始的数字如000123.jpg开始的话就是123<br> <br>subdir = dir(maindir);<br>n=1;<br> <br>for i = 1:length(subdir)<br>  %if ~strcmp(subdir(i).name ,&apos;.&apos;) &amp;&amp; ~strcmp(subdir(i).name,&apos;..&apos;)<br>  if ~strcmp(subdir(i).name ,&apos;.&apos;) || ~strcmp(subdir(i).name,&apos;..&apos;)<br>     subsubdir = dir(strcat(maindir,subdir(i).name));<br>    for j=1:length(subsubdir)<br>         if ~strcmp(subsubdir(j).name ,&apos;.&apos;) &amp;&amp; ~strcmp(subsubdir(j).name,&apos;..&apos;)<br>            img=imread([maindir,subdir(i).name,&apos;\&apos;,subsubdir(j).name]);<br>            imshow(img);<br>            str=num2str(num_begin,&apos;%09d&apos;);<br>            newname=strcat(str,&apos;.png&apos;);<br>            newname=newname(end-(name_long+3):end);<br>            system([&apos;rename &apos; [maindir,subdir(i).name,&apos;\&apos;,subsubdir(j).name] &apos; &apos; newname]);<br>            num_begin=num_begin+1;<br>            fprintf(&apos;当前处理文件夹%s&apos;,subdir(i).name);<br>            fprintf(&apos;已经处理%d张图片\n&apos;,n);<br>            n=n+1;<br>           pause(0.1);%可以将暂停去掉<br>         end<br>    end<br>  end<br>end<br></code></pre></td></tr></table></figure>
 
-maindir=&#39;D:\1魏鹤翔\长春光机所\标注工\rename\test&#39;;
-name_long=5; %图片名字的长度，如000123.jpg为6,最多9位,可修改
-num_begin=1; %图像命名开始的数字如000123.jpg开始的话就是123
+<h2 id="复制并顺序命名标注文件"><a href="#复制并顺序命名标注文件" class="headerlink" title="复制并顺序命名标注文件"></a>复制并顺序命名标注文件</h2><p> 由于我们的图片是视频文件顺序截取，所以两张图片之间的标注信息具有高度相似性，这也是为什么上面一定要按顺序排序文件。这样一来，我们只需对上一张的标注信息做少量修改即可。于是我们便一起写了这个windows的批处理文件，如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs undefined">@echo off<br>cd. &gt;name.txt    //清空命名txt文件<br>set /a start=4990  //设置复制目标文件<br>set /a long=15    //设置复制文件个数<br>set /a end=start+long<br>for /l %%i in (%start%,1,%end%) do (echo %%i.xml &gt;&gt; name.txt)  //将文件名按顺序写入命名txt文件<br><br>set name=%start%.xml<br><br>for /f %%i in (test.txt) do (<br>  echo F|(copy %name% %%i)<br>)  //复制目标标注文件并按照txt文件内容命名新的标注文件<br></code></pre></td></tr></table></figure>
 
-subdir = dir(maindir);
-n=1;
-
-for i = 1:length(subdir)
-  %if ~strcmp(subdir(i).name ,&#39;.&#39;) &amp;&amp; ~strcmp(subdir(i).name,&#39;..&#39;)
-  if ~strcmp(subdir(i).name ,&#39;.&#39;) || ~strcmp(subdir(i).name,&#39;..&#39;)
-     subsubdir = dir(strcat(maindir,subdir(i).name));
-    for j=1:length(subsubdir)
-         if ~strcmp(subsubdir(j).name ,&#39;.&#39;) &amp;&amp; ~strcmp(subsubdir(j).name,&#39;..&#39;)
-            img=imread([maindir,subdir(i).name,&#39;\&#39;,subsubdir(j).name]);
-            imshow(img);
-            str=num2str(num_begin,&#39;%09d&#39;);
-            newname=strcat(str,&#39;.png&#39;);
-            newname=newname(end-(name_long+3):end);
-            system([&#39;rename &#39; [maindir,subdir(i).name,&#39;\&#39;,subsubdir(j).name] &#39; &#39; newname]);
-            num_begin=num_begin+1;
-            fprintf(&#39;当前处理文件夹%s&#39;,subdir(i).name);
-            fprintf(&#39;已经处理%d张图片\n&#39;,n);
-            n=n+1;
-           pause(0.1);%可以将暂停去掉
-         end
-    end
-  end
-end</code></pre><h2 id="复制并顺序命名标注文件"><a href="#复制并顺序命名标注文件" class="headerlink" title="复制并顺序命名标注文件"></a>复制并顺序命名标注文件</h2><p> 由于我们的图片是视频文件顺序截取，所以两张图片之间的标注信息具有高度相似性，这也是为什么上面一定要按顺序排序文件。这样一来，我们只需对上一张的标注信息做少量修改即可。于是我们便一起写了这个windows的批处理文件，如下</p>
-<pre><code>@echo off
-cd. &gt;name.txt    //清空命名txt文件
-set /a start=4990  //设置复制目标文件
-set /a long=15    //设置复制文件个数
-set /a end=start+long
-for /l %%i in (%start%,1,%end%) do (echo %%i.xml &gt;&gt; name.txt)  //将文件名按顺序写入命名txt文件
-
-set name=%start%.xml
-
-for /f %%i in (test.txt) do (
-  echo F|(copy %name% %%i)
-)  //复制目标标注文件并按照txt文件内容命名新的标注文件</code></pre><p> 这样我们标好一张图片，邻近的10张左右便可以仅修改即可。批处理bat文件和txt文件以及xml文件放在同一个文件夹下，运行即可。</p>
+<p> 这样我们标好一张图片，邻近的10张左右便可以仅修改即可。批处理bat文件和txt文件以及xml文件放在同一个文件夹下，运行即可。</p>
 <h2 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h2><p> 我们这样仅对文件名进行修改，导致标注文件中的图片和路径信息与图片不对应，仍然是源文件信息。</p>
 <p><img src="/images/2019-07-22-01.jpg" alt="标注文件内容" title="标注文件内容"></p>
 <p>所幸标注软件和训练框架都是读取文件名来对应图片，所以对于内部信息的错误并无影响。但是看到有人和我们碰到相同的问题并用python脚本顺利解决，这里记录一下，以后可能用得着。</p>
@@ -372,15 +326,15 @@ for /f %%i in (test.txt) do (
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">批处理</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
         		</li>
       		
 		</ul>
@@ -687,6 +641,10 @@ for /f %%i in (test.txt) do (
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SLAM</a>
               </li>
              
@@ -720,10 +678,6 @@ for /f %%i in (test.txt) do (
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">批处理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
             
             <div class="clearfix"></div>

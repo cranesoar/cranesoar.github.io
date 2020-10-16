@@ -243,7 +243,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2k字</span>
+      <span class="post-count">1.9k字</span>
     </span>
   </span>
 
@@ -272,182 +272,37 @@
 <h3 id="1-1建立文件树"><a href="#1-1建立文件树" class="headerlink" title="1.1建立文件树"></a>1.1建立文件树</h3><p>在<code>darknet/VOCdevkit</code>下新建文件夹<code>VOC2019</code>，<br><code>VOC2019</code>下有三个文件夹<code>JPEGImages</code>，<code>Annotations</code>，<code>ImageSets</code>。<code>ImageSets</code>下包含两个文件夹<code>Main</code>，<code>Layout</code>。</p>
 <h3 id="1-2拷贝训练集"><a href="#1-2拷贝训练集" class="headerlink" title="1.2拷贝训练集"></a>1.2拷贝训练集</h3><p><code>JPEGImages</code>下放所有的训练图片，最终darknet会按照设定比例随机分配训练集和测试集。<br><code>Annotations</code>下放所有的xml标记文件</p>
 <h3 id="1-3生成txt标签"><a href="#1-3生成txt标签" class="headerlink" title="1.3生成txt标签"></a>1.3生成txt标签</h3><p>将下面代码存为python文件，在<code>VOC2019</code>下运行。在<code>ImageSets</code>-<code>Main</code>路径下生成三个txt文件（<code>test.txt</code>,<code>train.txt</code>,<code>val.txt</code>），里面是不带后缀的图片名。</p>
-<pre><code>import os
-import random
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs undefined">import os<br>import random<br><br>trainval_percent = 0.1<br>train_percent = 0.9<br>xmlfilepath = &apos;Annotations&apos;<br>txtsavepath = &apos;ImageSets\Main&apos;<br>total_xml = os.listdir(xmlfilepath)<br><br>num = len(total_xml)<br>list = range(num)<br>tv = int(num * trainval_percent)<br>tr = int(tv * train_percent)<br>trainval = random.sample(list, tv)<br>train = random.sample(trainval, tr)<br><br>ftrainval = open(&apos;ImageSets/Main/trainval.txt&apos;, &apos;w&apos;)<br>ftest = open(&apos;ImageSets/Main/test.txt&apos;, &apos;w&apos;)<br>ftrain = open(&apos;ImageSets/Main/train.txt&apos;, &apos;w&apos;)<br>fval = open(&apos;ImageSets/Main/val.txt&apos;, &apos;w&apos;)<br><br>for i in list:<br>    name = total_xml[i][:-4] + &apos;\n&apos;<br>    if i in trainval:<br>        ftrainval.write(name)<br>        if i in train:<br>            ftest.write(name)<br>        else:<br>            fval.write(name)<br>    else:<br>        ftrain.write(name)<br><br>ftrainval.close()<br>ftrain.close()<br>fval.close()<br>ftest.close()<br></code></pre></td></tr></table></figure>
 
-trainval_percent = 0.1
-train_percent = 0.9
-xmlfilepath = &#39;Annotations&#39;
-txtsavepath = &#39;ImageSets\Main&#39;
-total_xml = os.listdir(xmlfilepath)
-
-num = len(total_xml)
-list = range(num)
-tv = int(num * trainval_percent)
-tr = int(tv * train_percent)
-trainval = random.sample(list, tv)
-train = random.sample(trainval, tr)
-
-ftrainval = open(&#39;ImageSets/Main/trainval.txt&#39;, &#39;w&#39;)
-ftest = open(&#39;ImageSets/Main/test.txt&#39;, &#39;w&#39;)
-ftrain = open(&#39;ImageSets/Main/train.txt&#39;, &#39;w&#39;)
-fval = open(&#39;ImageSets/Main/val.txt&#39;, &#39;w&#39;)
-
-for i in list:
-    name = total_xml[i][:-4] + &#39;\n&#39;
-    if i in trainval:
-        ftrainval.write(name)
-        if i in train:
-            ftest.write(name)
-        else:
-            fval.write(name)
-    else:
-        ftrain.write(name)
-
-ftrainval.close()
-ftrain.close()
-fval.close()
-ftest.close()</code></pre><hr>
+<hr>
 <p>复制<code>voc_label.py</code>文件为<code>voc_label_car.py</code>，修改如下几处，设置文件路径和分类标签。然后在<code>VOCdevkit</code>路径下运行<code>voc_label_car.py</code>，发现生成了5个list文件（<code>2019_train.txt</code>, <code>2019_val.txt</code>, <code>2019_test.txt</code>, <code>train_car.txt</code>, <code>train_car.all.txt</code>）。</p>
-<pre><code>sets=[(&#39;2019&#39;, &#39;train&#39;), (&#39;2019&#39;, &#39;val&#39;), (&#39;2019&#39;, &#39;test&#39;)]
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined">sets=[(&apos;2019&apos;, &apos;train&apos;), (&apos;2019&apos;, &apos;val&apos;), (&apos;2019&apos;, &apos;test&apos;)]<br><br>classes = [&quot;car&quot;]<br></code></pre></td></tr></table></figure>
 
-classes = [&quot;car&quot;]</code></pre><hr>
-<pre><code>os.system(&quot;cat 2019_train.txt 2019_val.txt &gt; train_car.txt&quot;)
-os.system(&quot;cat 2019_train.txt 2019_val.txt 2019_test.txt &gt; train_car.all.txt&quot;)</code></pre><h3 id="1-4修改配置文件"><a href="#1-4修改配置文件" class="headerlink" title="1.4修改配置文件"></a>1.4修改配置文件</h3><h4 id="1-4-1新建cfg-voc-car-data"><a href="#1-4-1新建cfg-voc-car-data" class="headerlink" title="1.4.1新建cfg/voc_car.data"></a>1.4.1新建<code>cfg/voc_car.data</code></h4><p>复制<code>cfg/voc.data</code>进行修改新建。如下</p>
-<pre><code>classes= 1
-train  = /home/dl/darknet/scripts/train_car.txt
-valid  = /home/dl/darknet/scripts/2019_test.txt
-names = data/voc_car.names
-backup = backup/car</code></pre><h4 id="1-4-2新建data-voc-car-names"><a href="#1-4-2新建data-voc-car-names" class="headerlink" title="1.4.2新建data/voc_car.names"></a>1.4.2新建<code>data/voc_car.names</code></h4><p>内容为标签类型，因为我们训练只有一类car，故只写该类型，如果多个类型则逐行单写。</p>
-<pre><code>car</code></pre><h4 id="1-4-3新建cfg-yolov3-voc-car-cfg"><a href="#1-4-3新建cfg-yolov3-voc-car-cfg" class="headerlink" title="1.4.3新建cfg/yolov3-voc-car.cfg"></a>1.4.3新建<code>cfg/yolov3-voc-car.cfg</code></h4><p>复制<code>cfg/yolov3-voc.cfg</code>进行修改新建。<br>1.注释testing，打开train。<br>2.根据显卡的显存大小，设置batch和subdivisions。<br>3.修改三个yolo层的class和filters（<code>filters=3*(class+5)</code>。例如我这里class=1，filters=18。</p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">os.system(&quot;cat 2019_train.txt 2019_val.txt &gt; train_car.txt&quot;)<br>os.system(&quot;cat 2019_train.txt 2019_val.txt 2019_test.txt &gt; train_car.all.txt&quot;)<br></code></pre></td></tr></table></figure>
+
+<h3 id="1-4修改配置文件"><a href="#1-4修改配置文件" class="headerlink" title="1.4修改配置文件"></a>1.4修改配置文件</h3><h4 id="1-4-1新建cfg-voc-car-data"><a href="#1-4-1新建cfg-voc-car-data" class="headerlink" title="1.4.1新建cfg/voc_car.data"></a>1.4.1新建<code>cfg/voc_car.data</code></h4><p>复制<code>cfg/voc.data</code>进行修改新建。如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs undefined">classes= 1<br>train  = /home/dl/darknet/scripts/train_car.txt<br>valid  = /home/dl/darknet/scripts/2019_test.txt<br>names = data/voc_car.names<br>backup = backup/car<br></code></pre></td></tr></table></figure>
+
+<h4 id="1-4-2新建data-voc-car-names"><a href="#1-4-2新建data-voc-car-names" class="headerlink" title="1.4.2新建data/voc_car.names"></a>1.4.2新建<code>data/voc_car.names</code></h4><p>内容为标签类型，因为我们训练只有一类car，故只写该类型，如果多个类型则逐行单写。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">car<br></code></pre></td></tr></table></figure>
+
+<h4 id="1-4-3新建cfg-yolov3-voc-car-cfg"><a href="#1-4-3新建cfg-yolov3-voc-car-cfg" class="headerlink" title="1.4.3新建cfg/yolov3-voc-car.cfg"></a>1.4.3新建<code>cfg/yolov3-voc-car.cfg</code></h4><p>复制<code>cfg/yolov3-voc.cfg</code>进行修改新建。<br>1.注释testing，打开train。<br>2.根据显卡的显存大小，设置batch和subdivisions。<br>3.修改三个yolo层的class和filters（<code>filters=3*(class+5)</code>。例如我这里class=1，filters=18。</p>
 <h3 id="1-5下载预训练权重文件"><a href="#1-5下载预训练权重文件" class="headerlink" title="1.5下载预训练权重文件"></a>1.5下载预训练权重文件</h3><p><code>wget https://pjreddie.com/media/files/darknet53.conv.74</code></p>
 <h2 id="2-开始训练并生成训练日志"><a href="#2-开始训练并生成训练日志" class="headerlink" title="2.开始训练并生成训练日志"></a>2.开始训练并生成训练日志</h2><p><code>./darknet detector train cfg/voc_car.data cfg/yolov3-voc-car.cfg darknet53.conv.74 | tee result/log_car/training_car.log</code><br>当loss下降至0.0X，可停止训练。<br>不过在本次训练中，总训练时长6天，loss在0.3到0.4震荡了4天无下降迹象后停止训练。</p>
 <h2 id="3-绘制训练曲线"><a href="#3-绘制训练曲线" class="headerlink" title="3.绘制训练曲线"></a>3.绘制训练曲线</h2><p>进入<code>result/log_car</code>路径</p>
 <h3 id="3-1解析log文件"><a href="#3-1解析log文件" class="headerlink" title="3.1解析log文件"></a>3.1解析log文件</h3><p>在该路径下运行如下python代码，命名为<code>extract_log.py</code>。</p>
-<pre><code># coding=utf-8
-# 该文件用来提取训练log，去除不可解析的log后使log文件格式化，生成新的log文件供可视化工具绘图
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs undefined"># coding=utf-8<br># 该文件用来提取训练log，去除不可解析的log后使log文件格式化，生成新的log文件供可视化工具绘图<br><br>import inspect<br>import os<br>import random<br>import sys<br><br><br>def extract_log(log_file, new_log_file, key_word):<br>    with open(log_file, &apos;r&apos;) as f:<br>        with open(new_log_file, &apos;w&apos;) as train_log:<br>            # f = open(log_file)<br>            # train_log = open(new_log_file, &apos;w&apos;)<br>            for line in f:<br>                # 去除多gpu的同步log<br>                if &apos;Syncing&apos; in line:<br>                    continue<br>                # 去除除零错误的log<br>                if &apos;nan&apos; in line:<br>                    continue<br>                if key_word in line:<br>                    train_log.write(line)<br>    f.close()<br>    train_log.close()<br><br><br>extract_log(&apos;training_car_sub.log&apos;, &apos;training_log_sub_loss.txt&apos;, &apos;images&apos;)<br>extract_log(&apos;training_car_sub.log&apos;, &apos;training_log_sub_iou.txt&apos;, &apos;IOU&apos;)<br></code></pre></td></tr></table></figure>
 
-import inspect
-import os
-import random
-import sys
-
-
-def extract_log(log_file, new_log_file, key_word):
-    with open(log_file, &#39;r&#39;) as f:
-        with open(new_log_file, &#39;w&#39;) as train_log:
-            # f = open(log_file)
-            # train_log = open(new_log_file, &#39;w&#39;)
-            for line in f:
-                # 去除多gpu的同步log
-                if &#39;Syncing&#39; in line:
-                    continue
-                # 去除除零错误的log
-                if &#39;nan&#39; in line:
-                    continue
-                if key_word in line:
-                    train_log.write(line)
-    f.close()
-    train_log.close()
-
-
-extract_log(&#39;training_car_sub.log&#39;, &#39;training_log_sub_loss.txt&#39;, &#39;images&#39;)
-extract_log(&#39;training_car_sub.log&#39;, &#39;training_log_sub_iou.txt&#39;, &#39;IOU&#39;)</code></pre><p>生成两个txt文件，是解析出的loss和IOU数值。</p>
+<p>生成两个txt文件，是解析出的loss和IOU数值。</p>
 <h3 id="3-2绘制loss曲线"><a href="#3-2绘制loss曲线" class="headerlink" title="3.2绘制loss曲线"></a>3.2绘制loss曲线</h3><p>修改对应数值，运行如下python代码，命名为<code>training_loss_sub_visualization.py</code>。</p>
-<pre><code>import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs undefined">import pandas as pd<br>import numpy as np<br>import matplotlib.pyplot as plt<br><br># %matplotlib inline<br><br>lines = 93841  # 改为自己生成的train_log_loss.txt中的行数<br>result = pd.read_csv(&apos;training_log_sub_loss.txt&apos;, skiprows=[x for x in range(lines) if ((x % 10 != 9) | (x &lt; 1000))],<br>                     error_bad_lines=False, names=[&apos;loss&apos;, &apos;avg&apos;, &apos;rate&apos;, &apos;seconds&apos;, &apos;images&apos;])<br>result.head()<br><br>result[&apos;loss&apos;] = result[&apos;loss&apos;].str.split(&apos; &apos;).str.get(1)<br>result[&apos;avg&apos;] = result[&apos;avg&apos;].str.split(&apos; &apos;).str.get(1)<br>result[&apos;rate&apos;] = result[&apos;rate&apos;].str.split(&apos; &apos;).str.get(1)<br>result[&apos;seconds&apos;] = result[&apos;seconds&apos;].str.split(&apos; &apos;).str.get(1)<br>result[&apos;images&apos;] = result[&apos;images&apos;].str.split(&apos; &apos;).str.get(1)<br>result.head()<br>result.tail()<br><br># print(result.head())<br># print(result.tail())<br># print(result.dtypes)<br><br>print(result[&apos;loss&apos;])<br>print(result[&apos;avg&apos;])<br>print(result[&apos;rate&apos;])<br>print(result[&apos;seconds&apos;])<br>print(result[&apos;images&apos;])<br><br>result[&apos;loss&apos;] = pd.to_numeric(result[&apos;loss&apos;])<br>result[&apos;avg&apos;] = pd.to_numeric(result[&apos;avg&apos;])<br>result[&apos;rate&apos;] = pd.to_numeric(result[&apos;rate&apos;])<br>result[&apos;seconds&apos;] = pd.to_numeric(result[&apos;seconds&apos;])<br>result[&apos;images&apos;] = pd.to_numeric(result[&apos;images&apos;])<br>result.dtypes<br><br>fig = plt.figure()<br>ax = fig.add_subplot(1, 1, 1)<br>ax.plot(result[&apos;avg&apos;].values, label=&apos;avg_loss&apos;)<br># ax.plot(result[&apos;loss&apos;].values,label=&apos;loss&apos;)<br>ax.legend(loc=&apos;best&apos;)  # 图列自适应位置<br>ax.set_title(&apos;The loss curves&apos;)<br>ax.set_xlabel(&apos;batches&apos;)<br>fig.savefig(&apos;avg_loss&apos;)<br># fig.savefig(&apos;loss&apos;)<br></code></pre></td></tr></table></figure>
 
-# %matplotlib inline
-
-lines = 93841  # 改为自己生成的train_log_loss.txt中的行数
-result = pd.read_csv(&#39;training_log_sub_loss.txt&#39;, skiprows=[x for x in range(lines) if ((x % 10 != 9) | (x &lt; 1000))],
-                     error_bad_lines=False, names=[&#39;loss&#39;, &#39;avg&#39;, &#39;rate&#39;, &#39;seconds&#39;, &#39;images&#39;])
-result.head()
-
-result[&#39;loss&#39;] = result[&#39;loss&#39;].str.split(&#39; &#39;).str.get(1)
-result[&#39;avg&#39;] = result[&#39;avg&#39;].str.split(&#39; &#39;).str.get(1)
-result[&#39;rate&#39;] = result[&#39;rate&#39;].str.split(&#39; &#39;).str.get(1)
-result[&#39;seconds&#39;] = result[&#39;seconds&#39;].str.split(&#39; &#39;).str.get(1)
-result[&#39;images&#39;] = result[&#39;images&#39;].str.split(&#39; &#39;).str.get(1)
-result.head()
-result.tail()
-
-# print(result.head())
-# print(result.tail())
-# print(result.dtypes)
-
-print(result[&#39;loss&#39;])
-print(result[&#39;avg&#39;])
-print(result[&#39;rate&#39;])
-print(result[&#39;seconds&#39;])
-print(result[&#39;images&#39;])
-
-result[&#39;loss&#39;] = pd.to_numeric(result[&#39;loss&#39;])
-result[&#39;avg&#39;] = pd.to_numeric(result[&#39;avg&#39;])
-result[&#39;rate&#39;] = pd.to_numeric(result[&#39;rate&#39;])
-result[&#39;seconds&#39;] = pd.to_numeric(result[&#39;seconds&#39;])
-result[&#39;images&#39;] = pd.to_numeric(result[&#39;images&#39;])
-result.dtypes
-
-fig = plt.figure()
-ax = fig.add_subplot(1, 1, 1)
-ax.plot(result[&#39;avg&#39;].values, label=&#39;avg_loss&#39;)
-# ax.plot(result[&#39;loss&#39;].values,label=&#39;loss&#39;)
-ax.legend(loc=&#39;best&#39;)  # 图列自适应位置
-ax.set_title(&#39;The loss curves&#39;)
-ax.set_xlabel(&#39;batches&#39;)
-fig.savefig(&#39;avg_loss&#39;)
-# fig.savefig(&#39;loss&#39;)</code></pre><p><img src="/images/2019-08-22-01.png" alt="loss曲线" title="loss曲线"></p>
+<p><img src="/images/2019-08-22-01.png" alt="loss曲线" title="loss曲线"></p>
 <h3 id="3-3绘制Aug-IOU曲线"><a href="#3-3绘制Aug-IOU曲线" class="headerlink" title="3.3绘制Aug IOU曲线"></a>3.3绘制Aug IOU曲线</h3><p>修改对应数值，运行如下python代码，命名为<code>train_iou_sub_visualization.py</code>。</p>
-<pre><code>import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs undefined">import pandas as pd<br>import numpy as np<br>import matplotlib.pyplot as plt<br><br># %matplotlib inline<br><br>lines = 3000000  # 根据train_log_iou.txt的行数修改<br>result = pd.read_csv(&apos;training_log_sub_iou.txt&apos;, skiprows=[x for x in range(lines) if (x % 10 == 0 or x % 10 == 9)],<br>                     error_bad_lines=False, names=[&apos;Region Avg IOU&apos;, &apos;Class&apos;, &apos;Obj&apos;, &apos;No Obj&apos;, &apos;Avg Recall&apos;, &apos;count&apos;])<br>result.head()<br><br>result[&apos;Region Avg IOU&apos;] = result[&apos;Region Avg IOU&apos;].str.split(&apos;: &apos;).str.get(1)<br>result[&apos;Class&apos;] = result[&apos;Class&apos;].str.split(&apos;: &apos;).str.get(1)<br>result[&apos;Obj&apos;] = result[&apos;Obj&apos;].str.split(&apos;: &apos;).str.get(1)<br>result[&apos;No Obj&apos;] = result[&apos;No Obj&apos;].str.split(&apos;: &apos;).str.get(1)<br>result[&apos;Avg Recall&apos;] = result[&apos;Avg Recall&apos;].str.split(&apos;: &apos;).str.get(1)<br>result[&apos;count&apos;] = result[&apos;count&apos;].str.split(&apos;: &apos;).str.get(1)<br>result.head()<br>result.tail()<br><br># print(result.head())<br># print(result.tail())<br># print(result.dtypes)<br>print(result[&apos;Region Avg IOU&apos;])<br><br>result[&apos;Region Avg IOU&apos;] = pd.to_numeric(result[&apos;Region Avg IOU&apos;])<br>result[&apos;Class&apos;] = pd.to_numeric(result[&apos;Class&apos;])<br>result[&apos;Obj&apos;] = pd.to_numeric(result[&apos;Obj&apos;])<br>result[&apos;No Obj&apos;] = pd.to_numeric(result[&apos;No Obj&apos;])<br>result[&apos;Avg Recall&apos;] = pd.to_numeric(result[&apos;Avg Recall&apos;])<br>result[&apos;count&apos;] = pd.to_numeric(result[&apos;count&apos;])<br>result.dtypes<br><br>fig = plt.figure()<br>ax = fig.add_subplot(1, 1, 1)<br>ax.plot(result[&apos;Region Avg IOU&apos;].values, label=&apos;Region Avg IOU&apos;)<br># ax.plot(result[&apos;Class&apos;].values,label=&apos;Class&apos;)<br># ax.plot(result[&apos;Obj&apos;].values,label=&apos;Obj&apos;)<br># ax.plot(result[&apos;No Obj&apos;].values,label=&apos;No Obj&apos;)<br># ax.plot(result[&apos;Avg Recall&apos;].values,label=&apos;Avg Recall&apos;)<br># ax.plot(result[&apos;count&apos;].values,label=&apos;count&apos;)<br>ax.legend(loc=&apos;best&apos;)<br># ax.set_title(&apos;The Region Avg IOU curves&apos;)<br>ax.set_title(&apos;The Region Avg IOU curves&apos;)<br>ax.set_xlabel(&apos;batches&apos;)<br># fig.savefig(&apos;Avg IOU&apos;)<br>fig.savefig(&apos;Region Avg IOU&apos;)<br></code></pre></td></tr></table></figure>
 
-# %matplotlib inline
-
-lines = 3000000  # 根据train_log_iou.txt的行数修改
-result = pd.read_csv(&#39;training_log_sub_iou.txt&#39;, skiprows=[x for x in range(lines) if (x % 10 == 0 or x % 10 == 9)],
-                     error_bad_lines=False, names=[&#39;Region Avg IOU&#39;, &#39;Class&#39;, &#39;Obj&#39;, &#39;No Obj&#39;, &#39;Avg Recall&#39;, &#39;count&#39;])
-result.head()
-
-result[&#39;Region Avg IOU&#39;] = result[&#39;Region Avg IOU&#39;].str.split(&#39;: &#39;).str.get(1)
-result[&#39;Class&#39;] = result[&#39;Class&#39;].str.split(&#39;: &#39;).str.get(1)
-result[&#39;Obj&#39;] = result[&#39;Obj&#39;].str.split(&#39;: &#39;).str.get(1)
-result[&#39;No Obj&#39;] = result[&#39;No Obj&#39;].str.split(&#39;: &#39;).str.get(1)
-result[&#39;Avg Recall&#39;] = result[&#39;Avg Recall&#39;].str.split(&#39;: &#39;).str.get(1)
-result[&#39;count&#39;] = result[&#39;count&#39;].str.split(&#39;: &#39;).str.get(1)
-result.head()
-result.tail()
-
-# print(result.head())
-# print(result.tail())
-# print(result.dtypes)
-print(result[&#39;Region Avg IOU&#39;])
-
-result[&#39;Region Avg IOU&#39;] = pd.to_numeric(result[&#39;Region Avg IOU&#39;])
-result[&#39;Class&#39;] = pd.to_numeric(result[&#39;Class&#39;])
-result[&#39;Obj&#39;] = pd.to_numeric(result[&#39;Obj&#39;])
-result[&#39;No Obj&#39;] = pd.to_numeric(result[&#39;No Obj&#39;])
-result[&#39;Avg Recall&#39;] = pd.to_numeric(result[&#39;Avg Recall&#39;])
-result[&#39;count&#39;] = pd.to_numeric(result[&#39;count&#39;])
-result.dtypes
-
-fig = plt.figure()
-ax = fig.add_subplot(1, 1, 1)
-ax.plot(result[&#39;Region Avg IOU&#39;].values, label=&#39;Region Avg IOU&#39;)
-# ax.plot(result[&#39;Class&#39;].values,label=&#39;Class&#39;)
-# ax.plot(result[&#39;Obj&#39;].values,label=&#39;Obj&#39;)
-# ax.plot(result[&#39;No Obj&#39;].values,label=&#39;No Obj&#39;)
-# ax.plot(result[&#39;Avg Recall&#39;].values,label=&#39;Avg Recall&#39;)
-# ax.plot(result[&#39;count&#39;].values,label=&#39;count&#39;)
-ax.legend(loc=&#39;best&#39;)
-# ax.set_title(&#39;The Region Avg IOU curves&#39;)
-ax.set_title(&#39;The Region Avg IOU curves&#39;)
-ax.set_xlabel(&#39;batches&#39;)
-# fig.savefig(&#39;Avg IOU&#39;)
-fig.savefig(&#39;Region Avg IOU&#39;)
-</code></pre><p><img src="/images/2019-08-22-02.png" alt="Avg IOU曲线" title="Avg IOU曲线"></p>
+<p><img src="/images/2019-08-22-02.png" alt="Avg IOU曲线" title="Avg IOU曲线"></p>
 <hr>
 <p>在约4000批后，loss开始在0.3~0.4之间震荡不再下降，而IOU（交并比）后来也一直稳定在0.95以上。分析变化曲线，修改cfg文件中的学习率变化策略获得更优的训练效果。</p>
 <h2 id="4-测试训练的权重文件"><a href="#4-测试训练的权重文件" class="headerlink" title="4.测试训练的权重文件"></a>4.测试训练的权重文件</h2><p><img src="/images/2019-08-22-03.png" alt="未在数据集的图片测试" title="未在数据集的图片测试"><br>我们使用前10000张图片进行训练，随机抽取后7000张图片进行测试。对于右上角停车场和上方十字路口处的车辆，在训练集中未对其进行标注，测试时也没有被网络框选。</p>
@@ -818,6 +673,10 @@ fig.savefig(&#39;Region Avg IOU&#39;)
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SLAM</a>
               </li>
              
@@ -851,10 +710,6 @@ fig.savefig(&#39;Region Avg IOU&#39;)
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">批处理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
             
             <div class="clearfix"></div>

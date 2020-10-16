@@ -236,7 +236,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">410字</span>
+      <span class="post-count">407字</span>
     </span>
   </span>
 
@@ -257,23 +257,9 @@
   <div class="article-entry" itemprop="articleBody">
     
     <p>在ROS使用中，一些很有用却容易忘记的命令记录在这里，不然每次都要重新查。<a id="more"></a></p>
-<h2 id="rosbag"><a href="#rosbag" class="headerlink" title="rosbag"></a>rosbag</h2><pre><code>/*---------------rosbag record---------------*/
-rosbag record -a   //录制所有话题
-rosbag record /topic1 /topic2 //录制指定话题
-rosbag record -O filename.bag /topic1 //设定包文件名
-rosbag record -o name /topic1 //设定包前缀
-&lt;node pkg=&quot;rosbag&quot; type=&quot;record&quot; name=&quot;bag_record&quot; args=&quot;/topic1 /topic2&quot;/&gt;  //launch文件中的录制命令
-/*---------------rosbag play---------------*/
-rosbag play &lt;bagfile&gt;　//播放包文件
-rosbag play &lt;bagfile&gt; --topics /topic1 //播放指定话题
-rosbag play -l &lt;bagfile&gt; //循环播放
-rosbag play -d [num] &lt;bagfile&gt; //延时num秒播放
-rosbag play -r [num] &lt;bagfile&gt; //按num倍速度播放
-rosbag play -u [num] &lt;bagfile&gt; //仅播放前num秒
-rosbag play -s [num] &lt;bagfile&gt; //跳过前num秒播放
-/*---------------rosbag compress---------------*/
-rosbag compress --lz4 &lt;bagfile&gt; //压缩为lz4格式，体积大，打开快
-rosbag compress --bz2 &lt;bagfile&gt; //压缩为bz2格式，体积小，打开慢</code></pre><hr>
+<h2 id="rosbag"><a href="#rosbag" class="headerlink" title="rosbag"></a>rosbag</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs undefined">/*---------------rosbag record---------------*/<br>rosbag record -a   //录制所有话题<br>rosbag record /topic1 /topic2 //录制指定话题<br>rosbag record -O filename.bag /topic1 //设定包文件名<br>rosbag record -o name /topic1 //设定包前缀<br>&lt;node pkg=&quot;rosbag&quot; type=&quot;record&quot; name=&quot;bag_record&quot; args=&quot;/topic1 /topic2&quot;/&gt;  //launch文件中的录制命令<br>/*---------------rosbag play---------------*/<br>rosbag play &lt;bagfile&gt;　//播放包文件<br>rosbag play &lt;bagfile&gt; --topics /topic1 //播放指定话题<br>rosbag play -l &lt;bagfile&gt; //循环播放<br>rosbag play -d [num] &lt;bagfile&gt; //延时num秒播放<br>rosbag play -r [num] &lt;bagfile&gt; //按num倍速度播放<br>rosbag play -u [num] &lt;bagfile&gt; //仅播放前num秒<br>rosbag play -s [num] &lt;bagfile&gt; //跳过前num秒播放<br>/*---------------rosbag compress---------------*/<br>rosbag compress --lz4 &lt;bagfile&gt; //压缩为lz4格式，体积大，打开快<br>rosbag compress --bz2 &lt;bagfile&gt; //压缩为bz2格式，体积小，打开慢<br></code></pre></td></tr></table></figure>
+
+<hr>
 <table>
 <thead>
 <tr>
@@ -306,7 +292,9 @@ rosbag compress --bz2 &lt;bagfile&gt; //压缩为bz2格式，体积小，打开�
 <h4 id="rosbag的rviz时间过期问题"><a href="#rosbag的rviz时间过期问题" class="headerlink" title="rosbag的rviz时间过期问题"></a><strong><em>rosbag的rviz时间过期问题</em></strong></h4><p><a href="https://www.cnblogs.com/renzmin/articles/12203417.html" target="_blank" rel="noopener">参考博客</a></p>
 <h2 id="rostopic-amp-rosnode"><a href="#rostopic-amp-rosnode" class="headerlink" title="rostopic&amp;rosnode"></a>rostopic&amp;rosnode</h2><p>暂无</p>
 <h2 id="全部重启"><a href="#全部重启" class="headerlink" title="全部重启"></a>全部重启</h2><p>在一些slam算法的launch文件使用时，通过<code>ctrl+c</code>的方式关闭运行的节点时并不能彻底关闭，导致重新启动该launch文件，并播放bag包时，不能成功重新建图，rviz没有任何反应。此时应该在运行launch文件时，先如下命令</p>
-<pre><code>killall -9 rosmaster</code></pre><p>这样可以彻底关闭之前运行的所有节点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">killall -9 rosmaster<br></code></pre></td></tr></table></figure>
+
+<p>这样可以彻底关闭之前运行的所有节点</p>
 
     
 
@@ -666,6 +654,10 @@ rosbag compress --bz2 &lt;bagfile&gt; //压缩为bz2格式，体积小，打开�
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SLAM</a>
               </li>
              
@@ -699,10 +691,6 @@ rosbag compress --bz2 &lt;bagfile&gt; //压缩为bz2格式，体积小，打开�
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">批处理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
             
             <div class="clearfix"></div>
