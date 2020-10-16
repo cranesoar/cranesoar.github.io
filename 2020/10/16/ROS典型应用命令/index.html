@@ -11,14 +11,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="在ROS使用中，一些很有用却容易忘记的命令记录在这里，不然每次都要重新查。">
-<meta name="keywords" content="ROS">
+<meta name="keywords" content="SLAM,ROS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ROS典型应用命令">
 <meta property="og:url" content="https://cranesoar.cn/2020/10/16/ROS典型应用命令/index.html">
 <meta property="og:site_name" content="Wei&#39;s Space">
 <meta property="og:description" content="在ROS使用中，一些很有用却容易忘记的命令记录在这里，不然每次都要重新查。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-10-16T08:08:50.820Z">
+<meta property="og:updated_time" content="2020-10-16T10:04:03.759Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ROS典型应用命令">
 <meta name="twitter:description" content="在ROS使用中，一些很有用却容易忘记的命令记录在这里，不然每次都要重新查。">
@@ -46,6 +46,9 @@
   
 
 
+  
+    <script src="/lib/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-center-atom.css" rel="stylesheet">
   
 
 </head>
@@ -233,7 +236,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">408字</span>
+      <span class="post-count">410字</span>
     </span>
   </span>
 
@@ -280,7 +283,7 @@ rosbag compress --bz2 &lt;bagfile&gt; //压缩为bz2格式，体积小，打开�
 </thead>
 <tbody><tr>
 <td>check</td>
-<td>确定一个包是否可以在当前系统</td>
+<td>确定一个包是否可以在当前系统播放</td>
 </tr>
 <tr>
 <td>compress/decompress</td>
@@ -351,6 +354,10 @@ rosbag compress --bz2 &lt;bagfile&gt; //压缩为bz2格式，体积小，打开�
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SLAM</a>
+        		</li>
+      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ROS</a>
         		</li>
@@ -434,6 +441,15 @@ rosbag compress --bz2 &lt;bagfile&gt; //压缩为bz2格式，体积小，打开�
 
 <nav id="article-nav">
   
+    <a href="/2020/10/16/Hexo的双语配置文件切换脚本/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hexo的双语配置文件切换脚本
+        
+      </div>
+    </a>
+  
   
     <a href="/2020/10/12/IMU的误差模型标定和噪声性能分析/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">IMU的误差模型标定和噪声性能分析</div>
@@ -455,6 +471,19 @@ rosbag compress --bz2 &lt;bagfile&gt; //压缩为bz2格式，体积小，打开�
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#rosbag"><span class="toc-number">1.</span> <span class="toc-text">rosbag</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#rosbag的rviz时间过期问题"><span class="toc-number">1.0.1.</span> <span class="toc-text">rosbag的rviz时间过期问题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rostopic-amp-rosnode"><span class="toc-number">2.</span> <span class="toc-text">rostopic&amp;rosnode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#全部重启"><span class="toc-number">3.</span> <span class="toc-text">全部重启</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
