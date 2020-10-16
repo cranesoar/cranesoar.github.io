@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://cranefly88.cn">
-  <title>Archives: 2020/6 | 鹤翔的个人站</title>
+  <title>ROS典型应用命令 | 鹤翔的个人站</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="鹤翔的个人站">
-<meta property="og:url" content="https://cranefly88.cn/archives/2020/06/index.html">
+  <meta name="description" content="在ROS使用中，一些很有用却容易忘记的命令记录在这里，不然每次都要重新查。">
+<meta name="keywords" content="ROS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ROS典型应用命令">
+<meta property="og:url" content="https://cranefly88.cn/2020/10/16/ROS典型应用命令/index.html">
 <meta property="og:site_name" content="鹤翔的个人站">
+<meta property="og:description" content="在ROS使用中，一些很有用却容易忘记的命令记录在这里，不然每次都要重新查。">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-10-16T08:08:50.820Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="鹤翔的个人站">
+<meta name="twitter:title" content="ROS典型应用命令">
+<meta name="twitter:description" content="在ROS使用中，一些很有用却容易忘记的命令记录在这里，不然每次都要重新查。">
   
     <link rel="alternative" href="/atom.xml" title="鹤翔的个人站" type="application/atom+xml">
   
@@ -195,78 +200,301 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-ROS典型应用命令" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/06/15/回顾大创项目的故事/" class="archive-article-date">
-        <time datetime="2020-06-15T15:24:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-15</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/06/15/回顾大创项目的故事/">回顾大创项目的故事</a>
-	
+    <h1 class="article-title" itemprop="name">
+      ROS典型应用命令
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2020/10/16/ROS典型应用命令/" class="archive-article-date">
+        <time datetime="2020-10-16T07:04:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-16</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">408字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">1分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>在ROS使用中，一些很有用却容易忘记的命令记录在这里，不然每次都要重新查。<a id="more"></a></p>
+<h2 id="rosbag"><a href="#rosbag" class="headerlink" title="rosbag"></a>rosbag</h2><pre><code>/*---------------rosbag record---------------*/
+rosbag record -a   //录制所有话题
+rosbag record /topic1 /topic2 //录制指定话题
+rosbag record -O filename.bag /topic1 //设定包文件名
+rosbag record -o name /topic1 //设定包前缀
+&lt;node pkg=&quot;rosbag&quot; type=&quot;record&quot; name=&quot;bag_record&quot; args=&quot;/topic1 /topic2&quot;/&gt;  //launch文件中的录制命令
+/*---------------rosbag play---------------*/
+rosbag play &lt;bagfile&gt;　//播放包文件
+rosbag play &lt;bagfile&gt; --topics /topic1 //播放指定话题
+rosbag play -l &lt;bagfile&gt; //循环播放
+rosbag play -d [num] &lt;bagfile&gt; //延时num秒播放
+rosbag play -r [num] &lt;bagfile&gt; //按num倍速度播放
+rosbag play -u [num] &lt;bagfile&gt; //仅播放前num秒
+rosbag play -s [num] &lt;bagfile&gt; //跳过前num秒播放
+/*---------------rosbag compress---------------*/
+rosbag compress --lz4 &lt;bagfile&gt; //压缩为lz4格式，体积大，打开快
+rosbag compress --bz2 &lt;bagfile&gt; //压缩为bz2格式，体积小，打开慢</code></pre><hr>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>check</td>
+<td>确定一个包是否可以在当前系统</td>
+</tr>
+<tr>
+<td>compress/decompress</td>
+<td>包的压缩和解压缩</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>包的过滤，可以用python命令</td>
+</tr>
+<tr>
+<td>fix</td>
+<td>修复active的bag（step2）</td>
+</tr>
+<tr>
+<td>reindex</td>
+<td>重新索引active的bag（step1）</td>
+</tr>
+</tbody></table>
+<hr>
+<h4 id="rosbag的rviz时间过期问题"><a href="#rosbag的rviz时间过期问题" class="headerlink" title="rosbag的rviz时间过期问题"></a><strong><em>rosbag的rviz时间过期问题</em></strong></h4><p><a href="https://www.cnblogs.com/renzmin/articles/12203417.html" target="_blank" rel="noopener">参考博客</a></p>
+<h2 id="rostopic-amp-rosnode"><a href="#rostopic-amp-rosnode" class="headerlink" title="rostopic&amp;rosnode"></a>rostopic&amp;rosnode</h2><p>暂无</p>
+<h2 id="全部重启"><a href="#全部重启" class="headerlink" title="全部重启"></a>全部重启</h2><p>在一些slam算法的launch文件使用时，通过<code>ctrl+c</code>的方式关闭运行的节点时并不能彻底关闭，导致重新启动该launch文件，并播放bag包时，不能成功重新建图，rviz没有任何反应。此时应该在运行launch文件时，先如下命令</p>
+<pre><code>killall -9 rosmaster</code></pre><p>这样可以彻底关闭之前运行的所有节点</p>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>我需要防脱洗发水<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">机械</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ROS</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/故事//" class="article-tag-list-link color3">故事</a>
+        			<a href="/categories/项目//" class="article-tag-list-link color3">项目</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
     
 
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
 
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://cranefly88.cn/2020/10/16/ROS典型应用命令/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/10/12/IMU的误差模型标定和噪声性能分析/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">IMU的误差模型标定和噪声性能分析</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section id="comments" style="margin:10px;padding:10px;background:#fff;">
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "lzN271bTWIV3Hdmkr4eCjbiD-gzGzoHsz",
+            app_key: "z1VV6En6Vn9nsvN441OlQ4Vn",
+            placeholder: "Just go go",
+            avatar:"retro"
+        });
+    }
+</script>
+
+    </section>
+  
           </div>
         </div>
       </div>
@@ -305,8 +533,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
