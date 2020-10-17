@@ -5,8 +5,8 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://cranesoar.cn">
-  <title>用evo工具评估slam定位精度 | Wei&#39;s Space</title>
+  <link rel="dns-prefetch" href="https://cranefly88.cn">
+  <title>用evo工具评估slam定位精度 | 鹤翔的个人站</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
@@ -14,19 +14,19 @@
 <meta name="keywords" content="SLAM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用evo工具评估slam定位精度">
-<meta property="og:url" content="https://cranesoar.cn/2020/10/12/用evo工具评估slam定位精度/index.html">
-<meta property="og:site_name" content="Wei&#39;s Space">
+<meta property="og:url" content="https://cranefly88.cn/2020/10/12/用evo工具评估slam定位精度/index.html">
+<meta property="og:site_name" content="鹤翔的个人站">
 <meta property="og:description" content="使用多个开源slam算法对同一个bag进行运算，获得其最终的里程计轨迹nav_msgs数据后，使用evo工具求取其分别与ground truth之间的误差。本篇由于跨度较大，采用倒叙来写，先忽视数据来源，从使用开始往回写。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://cranesoar.cn/images/2020-10-17-01.gif">
-<meta property="og:image" content="https://cranesoar.cn/images/2020-10-17-02.gif">
+<meta property="og:image" content="https://cranefly88.cn/images/2020-10-17-01.gif">
+<meta property="og:image" content="https://cranefly88.cn/images/2020-10-17-02.gif">
 <meta property="og:updated_time" content="2020-10-17T07:35:54.513Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用evo工具评估slam定位精度">
 <meta name="twitter:description" content="使用多个开源slam算法对同一个bag进行运算，获得其最终的里程计轨迹nav_msgs数据后，使用evo工具求取其分别与ground truth之间的误差。本篇由于跨度较大，采用倒叙来写，先忽视数据来源，从使用开始往回写。">
-<meta name="twitter:image" content="https://cranesoar.cn/images/2020-10-17-01.gif">
+<meta name="twitter:image" content="https://cranefly88.cn/images/2020-10-17-01.gif">
   
-    <link rel="alternative" href="/atom.xml" title="Wei&#39;s Space" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="鹤翔的个人站" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/head.jpg">
@@ -50,9 +50,6 @@
 
 
   
-    <script src="/lib/pace.min.js"></script>
-    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-center-atom.css" rel="stylesheet">
-  
 
 </head>
 
@@ -71,10 +68,10 @@
 			<img src="/img/head.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-			<h1 class="header-author"><a href="/">Wei&#39;s Space</a></h1>
+			<h1 class="header-author"><a href="/">鹤翔的个人站</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">The very essence of romance is uncertainty</p>
+		<p class="header-subtitle">无常才是真灿烂，动人在变幻</p>
 		
 
 		<nav class="header-menu">
@@ -84,26 +81,26 @@
 			
 				<li><a href="https://cranesoar.gitee.io/" >境内服</a></li>
 			
-				<li><a href="/categories/项目/" >Stray</a></li>
+				<li><a href="/categories/项目/" >项目</a></li>
 			
-				<li><a href="/categories/学术/" >Study</a></li>
+				<li><a href="/categories/学术/" >学术</a></li>
 			
-				<li><a href="/categories/故事/" >Story</a></li>
+				<li><a href="/categories/故事/" >故事</a></li>
 			
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
 			
 				
-					<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">All</a>
+					<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
 				
 			
 				
-					<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">Links</a>
+					<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
 				
 			
 				
-					<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">About me</a>
+					<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
 				
 			
 		</nav>
@@ -143,10 +140,10 @@
 				</a>
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Wei&#39;s Space</h1>
+			  <h1 class="header-author js-header-author">鹤翔的个人站</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>The very essence of romance is uncertainty<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>无常才是真灿烂，动人在变幻<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -186,11 +183,11 @@
 		        
 					<li style="width: 35%"><a href="https://cranesoar.gitee.io/">境内服</a></li>
 		        
-					<li style="width: 35%"><a href="/categories/项目/">Stray</a></li>
+					<li style="width: 35%"><a href="/categories/项目/">项目</a></li>
 		        
-					<li style="width: 35%"><a href="/categories/学术/">Study</a></li>
+					<li style="width: 35%"><a href="/categories/学术/">学术</a></li>
 		        
-					<li style="width: 35%"><a href="/categories/故事/">Story</a></li>
+					<li style="width: 35%"><a href="/categories/故事/">故事</a></li>
 		        
 				</ul>
 			</nav>
@@ -278,7 +275,7 @@
           <span class="tooltip-content">
             <span class="tooltip-text">
               <span class="tooltip-inner">
-                <p class="reward-p"><i class="icon icon-quo-left"></i>I need Bawang shampoo!<i
+                <p class="reward-p"><i class="icon icon-quo-left"></i>我需要防脱洗发水<i
                     class="icon icon-quo-right"></i></p>
                 <div class="reward-box">
                   
@@ -380,7 +377,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://cranesoar.cn/2020/10/12/用evo工具评估slam定位精度/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://cranefly88.cn/2020/10/12/用evo工具评估slam定位精度/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -485,7 +482,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019-2020 <a href="/" target="_blank">Wei&#39;s Space</a>
+    		&copy; 2019-2020 <a href="/" target="_blank">鹤翔的个人站</a>
     	</div>
       	<div class="footer-right">
 			
@@ -579,15 +576,15 @@
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">All</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">Links</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">About me</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -712,7 +709,7 @@
                 
                   <i class="icon-link icon"></i>
                 
-                Welcome
+                广告位招租
               </a>
             </li>
           
