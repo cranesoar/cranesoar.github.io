@@ -89,7 +89,7 @@
       <link href="/2020/10/12/%E7%94%A8evo%E5%B7%A5%E5%85%B7%E8%AF%84%E4%BC%B0slam%E5%AE%9A%E4%BD%8D%E7%B2%BE%E5%BA%A6/"/>
       <url>/2020/10/12/%E7%94%A8evo%E5%B7%A5%E5%85%B7%E8%AF%84%E4%BC%B0slam%E5%AE%9A%E4%BD%8D%E7%B2%BE%E5%BA%A6/</url>
       
-        <content type="html"><![CDATA[<p>使用多个开源slam算法对同一个bag进行运算，获得其最终的里程计轨迹nav_msgs数据后，使用evo工具求取其分别与ground truth之间的误差。本篇由于跨度较大，采用倒叙来写，先忽视数据来源，从使用开始往回写。<a id="more"></a></p><h2 id="1-运行开源slam算法"><a href="#1-运行开源slam算法" class="headerlink" title="1.运行开源slam算法"></a>1.运行开源slam算法</h2><p>这里用的是lio-mapping和loam（无imu）</p><h2 id="2-获取里程计轨迹数据"><a href="#2-获取里程计轨迹数据" class="headerlink" title="2.获取里程计轨迹数据"></a>2.获取里程计轨迹数据</h2><p>由于两个算法的坐标系定义不同，导致轨迹互相垂直，使用额外ros节点进行重新修正发布，同时保证同步。也可以使用plotjuggler应急，选取不同坐标轴绘制二维轨迹。注意这里记得填充时间戳和frame_id,否则无法进行后续评估。</p><h2 id="3-用evo进行绘图和求误差"><a href="#3-用evo进行绘图和求误差" class="headerlink" title="3.用evo进行绘图和求误差"></a>3.用evo进行绘图和求误差</h2><p> <a href="https://github.com/MichaelGrupp/evo" target="_blank" rel="noopener">EVO工具仓库地址</a></p><hr>]]></content>
+        <content type="html"><![CDATA[<p>使用多个开源slam算法对同一个bag进行运算，获得其最终的里程计轨迹nav_msgs数据后，使用evo工具求取其分别与ground truth之间的误差。本篇由于跨度较大，采用倒叙来写，先忽视数据来源，从使用开始往回写。<a id="more"></a></p><h2 id="1-运行开源slam算法"><a href="#1-运行开源slam算法" class="headerlink" title="1.运行开源slam算法"></a>1.运行开源slam算法</h2><p>这里用的是lio-mapping和loam（无imu）</p><h2 id="2-获取里程计轨迹数据"><a href="#2-获取里程计轨迹数据" class="headerlink" title="2.获取里程计轨迹数据"></a>2.获取里程计轨迹数据</h2><p>由于两个算法的坐标系定义不同，导致轨迹互相垂直，使用额外ros节点进行重新修正发布，同时保证同步。也可以使用plotjuggler应急，选取不同坐标轴绘制二维轨迹。注意这里记得填充时间戳和frame_id,否则无法进行后续评估。</p><h2 id="3-用evo进行绘图和求误差"><a href="#3-用evo进行绘图和求误差" class="headerlink" title="3.用evo进行绘图和求误差"></a>3.用evo进行绘图和求误差</h2><p> <a href="https://github.com/MichaelGrupp/evo" target="_blank" rel="noopener">EVO工具仓库地址</a></p><hr><p> <img src="./images/2020-10-17-01.gif" alt="时间戳未对齐导致错误结果"></p>]]></content>
       
       
       <categories>
@@ -205,9 +205,9 @@
             
             <tag> python </tag>
             
-            <tag> 批处理 </tag>
-            
             <tag> 机器学习 </tag>
+            
+            <tag> 批处理 </tag>
             
         </tags>
       

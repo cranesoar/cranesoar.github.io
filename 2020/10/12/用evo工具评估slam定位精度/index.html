@@ -18,10 +18,12 @@
 <meta property="og:site_name" content="Wei&#39;s Space">
 <meta property="og:description" content="使用多个开源slam算法对同一个bag进行运算，获得其最终的里程计轨迹nav_msgs数据后，使用evo工具求取其分别与ground truth之间的误差。本篇由于跨度较大，采用倒叙来写，先忽视数据来源，从使用开始往回写。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-10-12T13:45:12.344Z">
+<meta property="og:image" content="https://cranesoar.cn/2020/10/12/用evo工具评估slam定位精度/images/2020-10-17-01.gif">
+<meta property="og:updated_time" content="2020-10-17T07:12:12.130Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用evo工具评估slam定位精度">
 <meta name="twitter:description" content="使用多个开源slam算法对同一个bag进行运算，获得其最终的里程计轨迹nav_msgs数据后，使用evo工具求取其分别与ground truth之间的误差。本篇由于跨度较大，采用倒叙来写，先忽视数据来源，从使用开始往回写。">
+<meta name="twitter:image" content="https://cranesoar.cn/2020/10/12/用evo工具评估slam定位精度/images/2020-10-17-01.gif">
   
     <link rel="alternative" href="/atom.xml" title="Wei&#39;s Space" type="application/atom+xml">
   
@@ -261,6 +263,7 @@
 <h2 id="2-获取里程计轨迹数据"><a href="#2-获取里程计轨迹数据" class="headerlink" title="2.获取里程计轨迹数据"></a>2.获取里程计轨迹数据</h2><p>由于两个算法的坐标系定义不同，导致轨迹互相垂直，使用额外ros节点进行重新修正发布，同时保证同步。也可以使用plotjuggler应急，选取不同坐标轴绘制二维轨迹。注意这里记得填充时间戳和frame_id,否则无法进行后续评估。</p>
 <h2 id="3-用evo进行绘图和求误差"><a href="#3-用evo进行绘图和求误差" class="headerlink" title="3.用evo进行绘图和求误差"></a>3.用evo进行绘图和求误差</h2><p> <a href="https://github.com/MichaelGrupp/evo" target="_blank" rel="noopener">EVO工具仓库地址</a></p>
 <hr>
+<p> <img src="./images/2020-10-17-01.gif" alt="时间戳未对齐导致错误结果"></p>
 
     
 
@@ -616,11 +619,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color5">SLAM</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SLAM</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -640,19 +643,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">机械</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">批处理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Yolo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">机械</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">批处理</a>
               </li>
             
             <div class="clearfix"></div>
