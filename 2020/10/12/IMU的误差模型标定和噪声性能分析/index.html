@@ -5,8 +5,8 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://cranefly88.cn">
-  <title>IMU的误差模型标定和噪声性能分析 | 鹤翔的个人站</title>
+  <link rel="dns-prefetch" href="https://cranesoar.cn">
+  <title>IMU的误差模型标定和噪声性能分析 | Wei&#39;s Space</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
@@ -14,16 +14,16 @@
 <meta name="keywords" content="SLAM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IMU的误差模型标定和噪声性能分析">
-<meta property="og:url" content="https://cranefly88.cn/2020/10/12/IMU的误差模型标定和噪声性能分析/index.html">
-<meta property="og:site_name" content="鹤翔的个人站">
+<meta property="og:url" content="https://cranesoar.cn/2020/10/12/IMU的误差模型标定和噪声性能分析/index.html">
+<meta property="og:site_name" content="Wei&#39;s Space">
 <meta property="og:description" content="IMU由于几乎不受外部环境影响能持续估计物体姿态的优异特性，被广泛应用于各种自动化设备。但是由于常见的6Dof传感器缺乏绝对参考，因此存在累计误差，对需要长时间持续运行的设备影响巨大。故对其误差的成分进行分析和标定有重要意义">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-10-14T18:45:05.153Z">
+<meta property="og:updated_time" content="2020-11-30T03:14:07.630Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IMU的误差模型标定和噪声性能分析">
 <meta name="twitter:description" content="IMU由于几乎不受外部环境影响能持续估计物体姿态的优异特性，被广泛应用于各种自动化设备。但是由于常见的6Dof传感器缺乏绝对参考，因此存在累计误差，对需要长时间持续运行的设备影响巨大。故对其误差的成分进行分析和标定有重要意义">
   
-    <link rel="alternative" href="/atom.xml" title="鹤翔的个人站" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Wei&#39;s Space" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/head.jpg">
@@ -47,6 +47,9 @@
 
 
   
+    <script src="/lib/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-center-atom.css" rel="stylesheet">
+  
 
 </head>
 
@@ -65,10 +68,10 @@
 			<img src="/img/head.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-			<h1 class="header-author"><a href="/">鹤翔的个人站</a></h1>
+			<h1 class="header-author"><a href="/">Wei&#39;s Space</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">无常才是真灿烂，动人在变幻</p>
+		<p class="header-subtitle">The very essence of romance is uncertainty</p>
 		
 
 		<nav class="header-menu">
@@ -78,26 +81,26 @@
 			
 				<li><a href="https://cranesoar.gitee.io/" >境内服</a></li>
 			
-				<li><a href="/categories/项目/" >项目</a></li>
+				<li><a href="/categories/项目/" >Stray</a></li>
 			
-				<li><a href="/categories/学术/" >学术</a></li>
+				<li><a href="/categories/学术/" >Study</a></li>
 			
-				<li><a href="/categories/故事/" >故事</a></li>
+				<li><a href="/categories/故事/" >Story</a></li>
 			
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
 			
 				
-					<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+					<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">All</a>
 				
 			
 				
-					<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
+					<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">Links</a>
 				
 			
 				
-					<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+					<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">About me</a>
 				
 			
 		</nav>
@@ -137,10 +140,10 @@
 				</a>
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">鹤翔的个人站</h1>
+			  <h1 class="header-author js-header-author">Wei&#39;s Space</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>无常才是真灿烂，动人在变幻<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>The very essence of romance is uncertainty<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -180,11 +183,11 @@
 		        
 					<li style="width: 35%"><a href="https://cranesoar.gitee.io/">境内服</a></li>
 		        
-					<li style="width: 35%"><a href="/categories/项目/">项目</a></li>
+					<li style="width: 35%"><a href="/categories/项目/">Stray</a></li>
 		        
-					<li style="width: 35%"><a href="/categories/学术/">学术</a></li>
+					<li style="width: 35%"><a href="/categories/学术/">Study</a></li>
 		        
-					<li style="width: 35%"><a href="/categories/故事/">故事</a></li>
+					<li style="width: 35%"><a href="/categories/故事/">Story</a></li>
 		        
 				</ul>
 			</nav>
@@ -233,7 +236,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">358字</span>
+      <span class="post-count">451字</span>
     </span>
   </span>
 
@@ -260,6 +263,19 @@
 <p>-</p>
 <h2 id="2标定方法"><a href="#2标定方法" class="headerlink" title="2标定方法"></a>2标定方法</h2><h3 id="2-1六面标定法"><a href="#2-1六面标定法" class="headerlink" title="2.1六面标定法"></a>2.1六面标定法</h3><h3 id="2-2运动标定法"><a href="#2-2运动标定法" class="headerlink" title="2.2运动标定法"></a>2.2运动标定法</h3><p><a href="https://ieeexplore.ieee.org/document/6907297" target="_blank" rel="noopener">A robust and easy to implement method for IMU calibration without external equipments</a><br><a href="https://github.com/Neil-Oyoung/imu_tk" target="_blank" rel="noopener">imu_tk</a>用于标定系统误差</p>
 <h2 id="3静态误差分析——阿伦方差"><a href="#3静态误差分析——阿伦方差" class="headerlink" title="3静态误差分析——阿伦方差"></a>3静态误差分析——阿伦方差</h2><p><a href="http://blog.sina.com.cn/s/blog_40edfdc90102y1ar.html" target="_blank" rel="noopener">严老师经验谈</a><br><a href="https://telesens.co/wp-content/uploads/2017/05/AllanVariance5087-1.pdf" target="_blank" rel="noopener">Allan Variance: Noise Analysis for Gyroscopes</a><br><a href="https://github.com/gaowenliang/imu_utils" target="_blank" rel="noopener">imu_utils</a>用于标定随机误差</p>
+<hr>
+<p>我自己求阿伦方差的两种工具</p>
+<ul>
+<li>imu_utils<br>1.检查源代码中的单位是否一致，弧度角度，G与米每平方秒<br>2.设置传感器的launch文件，最大时长和簇大小<br>3.<code>roslaunch imu_utils xxx.launch</code><br>4.<code>rosbag play</code><br>5.<code>open matlab to plot the curve</code><ul>
+<li>首席工具<ol>
+<li>transform the bag in storing_data_ws  ps: match topic name</li>
+<li>get gyro_data.txt and acc_data.txt</li>
+<li>transfer them to shouxi’s directory</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
 
     
 
@@ -273,7 +289,7 @@
           <span class="tooltip-content">
             <span class="tooltip-text">
               <span class="tooltip-inner">
-                <p class="reward-p"><i class="icon icon-quo-left"></i>我需要防脱洗发水<i
+                <p class="reward-p"><i class="icon icon-quo-left"></i>I need Bawang shampoo!<i
                     class="icon icon-quo-right"></i></p>
                 <div class="reward-box">
                   
@@ -375,7 +391,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://cranefly88.cn/2020/10/12/IMU的误差模型标定和噪声性能分析/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://cranesoar.cn/2020/10/12/IMU的误差模型标定和噪声性能分析/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -480,7 +496,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019-2020 <a href="/" target="_blank">鹤翔的个人站</a>
+    		&copy; 2019-2020 <a href="/" target="_blank">Wei&#39;s Space</a>
     	</div>
       	<div class="footer-right">
 			
@@ -574,15 +590,15 @@
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">All</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">Links</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">About me</a></li>
       
         
     </ul>
@@ -707,7 +723,7 @@
                 
                   <i class="icon-link icon"></i>
                 
-                广告位招租
+                Welcome
               </a>
             </li>
           
